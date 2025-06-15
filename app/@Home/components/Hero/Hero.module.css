@@ -1,0 +1,41 @@
+.wheel{
+    position: absolute;
+    right:100px;
+    transform: rotatez(35.288deg);
+    z-index: 0;
+    
+}
+
+.wheel img {
+   height: 600px;
+   
+  
+}
+.overlay{
+    position: absolute;
+    height: 620px;
+    width: 1000px;
+    background: radial-gradient(farthest-corner at 25% 5%, transparent 30% , black 40%, black 120%);
+    z-index: 10;
+    top:0px;
+}
+.wheelcontainer{
+    position: relative;
+   
+}
+.light{
+    position: absolute;
+    z-index: -10;
+    transform: rotate(35.288deg); filter: grayscale(100%) sepia(50%);
+}
+.lightcontainer{
+    position: relative;
+}
+.lightoverlay{  
+    position: absolute;
+    bottom:0px;
+    height: 100%;
+    width: 100%;
+       background: radial-gradient(farthest-corner at 45% 25%, transparent 10% , black 40%, black 100%);
+   
+}

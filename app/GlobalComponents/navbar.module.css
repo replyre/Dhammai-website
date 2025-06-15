@@ -1,0 +1,169 @@
+/* navbar.module.css */
+
+.navbar {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  
+  z-index: 1000;
+  padding: 1rem 2rem;
+  
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+padding: 0.75rem 1.5rem;
+
+  
+  
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  text-decoration: none;
+}
+.logoIcon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 39px;
+height: 39px;
+border-radius: 10px;
+flex-shrink: 0;
+box-shadow: 0px 3.407px 2.641px 0px rgba(0, 14, 15, 0.20), 0px 1.704px 1.704px 0px rgba(0, 14, 15, 0.60), 0px 0.852px 0.852px 0px rgba(0, 14, 15, 0.60), 0px 0.2px 0.2px 0px #FFF, 0px 3.321px 25.556px 0px rgba(0, 14, 15, 0.17), 0px 9.488px 60.726px 0px rgba(0, 14, 15, 0.70);
+}
+.logoIcon img {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border:0.4px solid grey;
+  
+  border-radius: 50px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 1rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navLink:active {
+  transform: translateY(1px);
+}
+
+/* Contact Button */
+.contactSection {
+  display: flex;
+  align-items: center;
+}
+
+.contactButton {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.contactButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.contactButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navLinks {
+    display: none;
+  }
+  
+  .logo {
+    gap: 0.5rem;
+  }
+  
+  .logoText {
+    font-size: 1.1rem;
+  }
+  
+  .contactButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .logoText {
+    display: none;
+  }
+  
+  .contactButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}

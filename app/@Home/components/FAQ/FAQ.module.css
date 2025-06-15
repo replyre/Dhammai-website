@@ -1,0 +1,78 @@
+.faqWrapper {
+  background-color: #000;
+  color: #fff;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 100px;
+  scrollbar-color: transparent transparent;
+}
+
+.headingWrapper {
+  margin-bottom: 2rem;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+ background: linear-gradient(to right, #e5e5e5, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+.navIcons {
+  display: flex;
+    gap: 1rem;
+}
+
+.navIcons button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.faqList {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 5rem 0;
+  margin-left: 100px;
+  
+}
+
+.faqCard {
+  flex: 0 0 450px;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faqCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.faqCard p {
+  font-size: 0.95rem;
+  color: #aaa;
+  line-height: 1.5;
+}

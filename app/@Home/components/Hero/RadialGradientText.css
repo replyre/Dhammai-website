@@ -1,0 +1,66 @@
+.gradient-container {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  
+  position: relative;
+    padding: 0px 250px;
+    margin: 0 auto;
+  overflow: hidden;
+}
+
+.gradient-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    600px circle at 15% 40%, 
+    #af982832 5%, 
+    #af982832  5%, 
+     transparent 60%, 
+    transparent 100%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-content {
+  z-index: 10;
+  
+   
+}
+
+.main-heading {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+ 
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #e5e5e5, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub-heading {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  
+  color: #999999;
+}
+
+.separator {
+  margin: 0 0.5rem;
+}
+
+/* Media query for responsive design */
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+  
+  .sub-heading {
+    font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+  }
+}
+
