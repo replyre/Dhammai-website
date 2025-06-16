@@ -1,41 +1,78 @@
-.wheel{
-    position: absolute;
-    right:100px;
-    transform: rotatez(35.288deg);
-    z-index: 0;
-    
+.wheel {
+  position: absolute;
+  right: 100px;
+  transform: rotatez(35.288deg);
+  z-index: 0;
 }
 
 .wheel img {
-   height: 600px;
-   
-  
+  height: 600px;
 }
-.overlay{
+.overlay {
+  position: absolute;
+  height: 620px;
+  width: 1000px;
+  background: radial-gradient(
+    farthest-corner at 25% 5%,
+    transparent 30%,
+    black 40%,
+    black 120%
+  );
+  z-index: 10;
+  top: 0px;
+}
+.wheelcontainer {
+  position: relative;
+}
+.light {
+  position: absolute;
+  z-index: -10;
+  transform: rotate(35.288deg);
+  filter: grayscale(100%) sepia(50%);
+}
+.lightcontainer {
+  position: relative;
+}
+.lightoverlay {
+  position: absolute;
+  bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(
+    farthest-corner at 45% 25%,
+    transparent 10%,
+    black 40%,
+    black 100%
+  );
+}
+
+.lightcontainer img {
+  height: 600px;
+  width: 100%;
+}
+@media (min-width: 1700px) {
+  .light {
+    transform: rotate(35.288deg) scale(1.5);
+    top: -250px;
+    right: -25%;
+  }
+  .overlay {
     position: absolute;
     height: 620px;
-    width: 1000px;
-    background: radial-gradient(farthest-corner at 25% 5%, transparent 30% , black 40%, black 120%);
+    width: 1700px;
+    background: radial-gradient(
+      ellipse at 0% 10%,
+      transparent 28%,
+      black 40%,
+      black 100%
+    );
     z-index: 10;
-    top:0px;
-}
-.wheelcontainer{
-    position: relative;
-   
-}
-.light{
+  }
+
+  .wheel {
     position: absolute;
-    z-index: -10;
-    transform: rotate(35.288deg); filter: grayscale(100%) sepia(50%);
-}
-.lightcontainer{
-    position: relative;
-}
-.lightoverlay{  
-    position: absolute;
-    bottom:0px;
-    height: 100%;
-    width: 100%;
-       background: radial-gradient(farthest-corner at 45% 25%, transparent 10% , black 40%, black 100%);
-   
+    right: 200px;
+    transform: rotatez(35.288deg);
+    z-index: 0;
+  }
 }
