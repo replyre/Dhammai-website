@@ -13,6 +13,7 @@
 }
 .sigmaContainer img{
     width: 100%;
+        filter: brightness(1.2);
 }
 .sigmaHeading{
     position: absolute;

@@ -1,0 +1,163 @@
+.container {
+  background: #0a0a0a;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 150px;
+
+}
+
+.header {
+  display: flex;
+  margin-bottom: 60px;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.blogButton {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.header h1 span {
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 10px;
+  color: #999;
+}
+
+.searchBox {
+  margin: 20px auto 0;
+  width: 30%;
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 25px;
+  display: flex;
+  align-items: right;
+  border: 1px solid #aaa;
+
+}
+
+.searchBox input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 10px;
+}
+
+.icon {
+  color: #ccc;
+}
+
+.latestBlogs h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 40px 0 20px;
+  margin-bottom:40px ;
+  text-align: end;
+  
+}
+.latestBlogs h2 span{
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.featuredText {
+  width: 50%;
+}
+
+.featuredText h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.featuredText p {
+  color: #bbb;
+}
+
+.meta {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.readBtn {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.featuredImg {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 10px;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}

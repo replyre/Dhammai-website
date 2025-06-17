@@ -46,9 +46,8 @@
 .text2{
     position: absolute;
     top:30%;
-    right:10%;
-    width: 500px;
-    
+    left:10%;
+    text-align: right;
 }
 
 .text h2, .text2 h2{
@@ -104,9 +103,3 @@
     object-fit: cover;
 }
 
-.text2{
-    position: absolute;
-    top:35%;
-    left:10%;
-    text-align: right;
-}

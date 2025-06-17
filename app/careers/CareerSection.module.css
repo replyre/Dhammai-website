@@ -1,0 +1,158 @@
+.container {
+  background-color: #000;
+  color: #fff;
+  padding: 3rem 1.5rem;
+  width: 70%;
+  margin: auto;
+  padding-top: 150px;
+  margin-bottom: 100px;
+
+
+}
+.leftTopShade{
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.rightTopShade{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  transform: rotateY(180deg);
+}
+.rightmiddleShade{
+  position: absolute;
+  bottom:0;
+  right: 0px;
+  
+}
+.leftendShade{
+  position: absolute;
+  bottom:-100%;
+  left: 0px;
+  transform: rotateY(180deg);
+}
+.exploreButton {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.textArea{
+  display: flex;
+  justify-content: space-between;
+}
+
+.textArea h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0.5rem 0;
+  vertical-align: middle;
+  
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.textArea h1 span {
+  color: #fff;
+}
+
+.textArea p {
+  color: #aaa;
+  font-size: 1rem;
+  width: 32%;
+  line-height: 1.4;
+  max-width: 500px;
+  
+  
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 500px;
+  background-color: #222;
+  margin: 2rem 0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+.imagePlaceholder img{
+  border-radius: 10px;
+}
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accordionItem {
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+.accordionButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.accordionContent {
+  color: #ccc;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 2;
+   margin-left: 50px;
+}
+.accordionContent ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.accordionContent li {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.applyButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: 20px;
+}
+
+.applyButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(160, 172, 165, 0.3);
+}
