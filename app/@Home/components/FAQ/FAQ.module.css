@@ -10,33 +10,34 @@
 
 .headingWrapper {
   margin-bottom: 2rem;
-  
+
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+
+  width: 80%;
+  margin: auto;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
- background: linear-gradient(to right, #e5e5e5, #111111);
+  background: linear-gradient(to right, #e5e5e5, #5d5c5c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
-
-
 .subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
   color: #aaa;
 }
 
 .navIcons {
   display: flex;
-    gap: 1rem;
+  gap: 1rem;
 }
 
 .navIcons button {
@@ -54,11 +55,10 @@
   scroll-behavior: smooth;
   padding: 5rem 0;
   margin-left: 100px;
-  
 }
 
 .faqCard {
-  flex: 0 0 450px;
+  flex: 0 0 30vw;
   background-color: #1a1a1a;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -66,7 +66,7 @@
 }
 
 .faqCard h3 {
-  font-size: 1.1rem;
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
   font-weight: 600;
   margin-bottom: 1rem;
 }
