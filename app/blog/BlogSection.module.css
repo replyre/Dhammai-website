@@ -7,7 +7,17 @@
   margin-top: 150px;
   margin-bottom: 150px;
 }
-
+.leftTopShade{
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.rightTopShade{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  transform: rotateY(180deg);
+}
 .header {
   display: flex;
   margin-bottom: 60px;

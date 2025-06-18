@@ -32,6 +32,12 @@ const BlogSection = () => {
 
   return (
     <section className={styles.container}>
+      <div className={styles.leftTopShade}>
+        <img src="careerbg1.png" alt="" height={"100%"} width={"100%"} />
+      </div>
+       <div className={styles.rightTopShade}>
+        <img src="careerbg1.png" alt="" height={"100%"} width={"100%"} />
+      </div>
       <div className={styles.header}>
         <div>
           <button className={styles.blogButton}>+ Our Blog</button>
