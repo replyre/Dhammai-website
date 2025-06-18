@@ -1,11 +1,11 @@
 .container {
-  background: #0a0a0a;
+ 
   color: #fff;
   width: 80%;
   margin: auto;
   font-family: 'Segoe UI', sans-serif;
   margin-top: 150px;
-
+  margin-bottom: 150px;
 }
 
 .header {
@@ -56,6 +56,7 @@ background-clip: text;
   display: flex;
   align-items: right;
   border: 1px solid #aaa;
+  margin-right: 40px;
 
 }
 
@@ -98,22 +99,37 @@ background-clip: text;
 
 .featuredText {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  height: 300px;
 }
 
 .featuredText h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
 .featuredText p {
   color: #bbb;
+  width: 60%;
+  font-size: 1rem;
+
+}
+
+.divider{
+  height:2px;
+  background: linear-gradient(to right, black, grey, black ) ;
+  margin-bottom: 30px ;
 }
 
 .meta {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  margin-right: 40px;
 }
 
 .readBtn {
@@ -126,8 +142,8 @@ background-clip: text;
 }
 
 .featuredImg {
-  width: 40%;
-  height: auto;
+  width: 50%;
+  height: 300px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -146,14 +162,14 @@ background-clip: text;
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .card h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 10px 0;
 }
 
