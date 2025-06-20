@@ -1,30 +1,10 @@
 import React from "react";
 import styles from "./BlogSection.module.css";
 import { FaSearch } from "react-icons/fa";
+import { blogPosts } from "../data/blog";
+import Link from "next/link";
 
-const blogPosts = [
-  {
-    title: "Grok 3 Beta — The Age of Reasoning Agents",
-    description:
-      "We are thrilled to unveil an early preview of Grok 3, our most advanced model yet, blending superior reasoning with extensive pretraining knowledge.",
-    date: "February 19, 2025",
-    image: "/blog1.png",
-  },
-  {
-    title: "xAI raises $6B Series C",
-    description:
-      "We are partnering with A16Z, Blackrock, Fidelity Management & Research Company, Kingdom Holdings, Lightspeed, MGX, Morgan Stanley, QIA, Ol...",
-    date: "December 25, 2024",
-    image: "/blog2.png",
-  },
-  {
-    title: "New AI Benchmarks Released",
-    description:
-      "Our team released a new suite of benchmarks to evaluate real-world reasoning and performance in critical AI tasks.",
-    date: "November 14, 2024",
-    image: "/blog3.png",
-  },
-];
+
 
 const BlogSection = () => {
   const featured = blogPosts[0];
@@ -64,7 +44,9 @@ const BlogSection = () => {
             </div>
             <div className={styles.meta}>
               <span>{featured.date}</span>
+                <Link href={`blog/${0}`}>
               <button className={styles.readBtn}>READ</button>
+              </Link>
             </div>
           </div>
           <img
