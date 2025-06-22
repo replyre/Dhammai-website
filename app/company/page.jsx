@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Company.module.css'
+import Timeline from './component/Timeline'
 
 const Company = () => {
   return (
@@ -21,6 +22,46 @@ const Company = () => {
         <h1>Who are we ?</h1>
         <p> <span>Dhamm AI</span> was established to make technology and education accessible, inclusive, and impactful. Inspired by the principle of "Dhamm"—<span>the essential knowledge required to fulfill one's duties</span>—we actively empower individuals and communities by creating practical, intelligent solutions tailored to their real-world needs.</p>
        </div>
+       <div className={styles.world}>
+        <img src="/world.jpg" alt="" />
+        <div className={styles.worldtext}>
+        <h1>Our Mission</h1>
+        <p>Our mission actively bridges the gap between global innovation and local requirements, delivering cutting-edge AI-driven solutions that integrate effortlessly into daily routines. We serve a diverse audience—from students and educators to average working professionals—providing secure, locally-contextualized solutions that enhance productivity and learning outcomes.</p>
+        </div>
+       
+       </div>
+        <div className={styles.worldtext2}>
+        <h1> Our Vision</h1>
+        <div className={styles.vision}>
+          <div className={styles.comp}>
+            <img className={styles.overlay1}  src="/backvision1.png" alt="" />
+            <div >
+            <img src="/vision1.png" alt="" />
+            <p>Inclusivity</p>
+            <p>Making technology accessible and impactful for everyone, irrespective of background or proficiency.</p> </div>
+            </div>
+          <div className={styles.comp}>
+              <img  className={styles.overlay2} src="/backvision2.png" alt="" />
+              <div>
+            <img src="/vision2.png" alt="" />
+              <p>Innovation</p>
+            <p>Constantly delivering pioneering solutions that meet practical challenges and evolve with user needs.</p></div>
+          </div>
+          <div className={styles.comp}>
+            <img  className={styles.overlay3} src="/backvision3.png" alt="" />
+             <div>
+            <img src="/vision3.png" alt="" />
+             <p>Integrity</p>
+            <p>Prioritizing privacy, transparency, and ethical standards in every solution we provide.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+       <div className={styles.evolve}>
+        <h1>The AI Timeline</h1>
+        <p>Evolution of Artificial Intelligence (1943 – 2025)</p>
+         </div>
+         <Timeline/>
     </div>
   )
 }
