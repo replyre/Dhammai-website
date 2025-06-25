@@ -224,3 +224,109 @@ background-clip: text;
    
     line-height: 1.8;
 }
+
+.timeline2{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 50px;
+    padding: 44px;
+
+}
+
+.journeySection {
+ 
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.journeyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  
+}
+
+.journeyContent {
+  flex: 1;
+}
+
+.journeyTitle {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+.journeySubtitle {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+
+  color: #77628D;}
+
+
+.ctaButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.timeline2 .compimg{
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline2 div img{
+  transform: rotate(90deg);
+  filter: grayscale(100%);
+  
+  
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .journeyContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .journeyTitle,
+  .journeySubtitle {
+    font-size: 2.5rem;
+  }
+  
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+  }
+}

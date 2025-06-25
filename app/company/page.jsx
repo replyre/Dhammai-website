@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Company.module.css'
 import Timeline from './component/Timeline'
+import Timeline2 from './component/Timeline2'
 
 const Company = () => {
   return (
@@ -62,6 +63,27 @@ const Company = () => {
         <p>Evolution of Artificial Intelligence (1943 – 2025)</p>
          </div>
          <Timeline/>
+         <div className={styles.timeline2}>
+         <Timeline2/>
+         <div className={styles.compimg}>
+          <img  src="/comp.gif" alt="" />
+         </div>
+         </div>       
+    <section className={styles.journeySection}>
+      <div className={styles.journeyContainer}>
+    <div className={styles.journeyContent}>
+      <h2 className={styles.journeyTitle}>
+        The journey <span className={styles.journeyTitleMuted}>continues</span>
+      </h2>
+      <p className={styles.journeySubtitle}>
+        this time with you on board!
+      </p>
+    </div>
+    <button className={styles.ctaButton}>
+      Reach out Now!
+    </button>
+  </div>
+</section>
     </div>
   )
 }

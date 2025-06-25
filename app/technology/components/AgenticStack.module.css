@@ -1,0 +1,77 @@
+.container{  
+    width: 70%;
+    margin: auto;
+    color:grey
+}
+.container .row1{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    gap:40px;
+
+}
+
+.container .row1 .left {
+   
+    width: 50%;
+    padding-top: 20px;
+  
+    border-radius: 20px;
+    background: radial-gradient(ellipse at bottom, #5f5f5f5c , transparent , #5f5f5f5c);
+   
+}
+
+.container .row1 .right {
+   
+    width: 50%;
+    padding-top: 20px;
+  
+    border-radius: 20px;
+    background: linear-gradient(-125deg ,#5f5f5f5c , transparent , #5f5f5f5c);
+   
+}
+.container .row1 .left img, .right img{
+    height: 24px;
+    margin: 10px 0px;
+}
+
+.left p, .right p{
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: lowercase;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.lefttop, .righttop{
+ margin-bottom: 30px;
+ padding: 20px;
+ padding-bottom: 30px;
+    border-bottom: 2px dotted grey;
+}
+
+.leftbottom, .rightbottom {
+    padding: 20px;
+   
+}
+
+.leftbottom p, .rightbottom p{ 
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap:10px
+}
+.leftbottom h3, .rightbottom h3{
+    padding-bottom: 10px;
+} 
+
+.leftbottom p img{ 
+ height: 10px;
+ width: 20px;
+}
+
+.right{
+    color:white; 
+}
