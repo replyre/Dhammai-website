@@ -1,5 +1,5 @@
 .section{
-  width: 75%;
+  width: 70%;
   margin: auto;
 }
 .section2{
@@ -18,12 +18,10 @@
 }
 
 .impactSection {
-  margin-top: 10rem;
-  /* padding: 0 2rem; */
+  margin-top: 5rem;
 }
 
 .impactContainer {
-  /* max-width: 1200px; */
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -33,7 +31,7 @@
 
 .impactContent {
   padding-right: 2rem;
-  margin-left: 10rem;
+  margin-left: 15rem;
 }
 
 .impactTitle {
@@ -86,15 +84,15 @@
 }
 
 .ctaSection {
-  margin-top: 10rem;
-  padding: 4rem 2rem;
+  /* margin-top: 10rem; */
+  padding: 4rem 8rem;
+  /* background-color: red; */
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
 }
 
 .ctaContainer {
-  max-width: 1200px;
+  width: 83%;
   margin: 0 auto;
-  text-align: center;
 }
 
 .ctaTitle {
@@ -115,7 +113,7 @@
   color: #000000;
   border: none;
   border-radius: 50px;
-  padding: 1rem 3rem;
+  padding: 0.5rem 3rem;
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
@@ -391,18 +389,18 @@
   gap: 2rem;
 }
 
+.backButtonContainer{
+  width: 100%;
+}
+
 .backButton {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
   background: transparent;
   border: none;
   color: #ffffff;
   cursor: pointer;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   border-radius: 50%;
   transition: background-color 0.3s ease;
-  z-index: 10;
 }
 
 .backButton:hover {
@@ -412,7 +410,6 @@
 .content {
   width: 100%;
   margin: 0 auto;
-  padding-top: 4rem;
 }
 
 .header {
