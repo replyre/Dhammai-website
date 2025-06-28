@@ -68,6 +68,7 @@ background-clip: text;
     align-items: center;
     margin: auto;
     position: relative;
+    margin-bottom: 200px;
 }
 .world img{
     height: 100%;
@@ -160,7 +161,7 @@ background-clip: text;
 }
 
 .text p{
-    width: 40%;
+    width: 70%;
     margin: auto;
     line-height: 1.8;
     font-size: 1.4rem;
