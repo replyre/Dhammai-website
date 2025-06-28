@@ -1,0 +1,87 @@
+    .values{
+        padding-top: 100px;
+        width: 80%;
+        margin: auto;
+       
+        position: relative;
+    }
+    .values::before{
+       content:" ";
+       background: radial-gradient(ellipse at 50% 50%, rgba(231, 229, 229, 0.225) 0%, rgb(0, 0, 0) 40%);
+       height: 500px;
+       width: 600px;
+         position: absolute;
+         top:20px;
+         left: -300px;
+         z-index: -1;
+        
+
+    }
+        .values h1{
+            font-size: 40px;
+           
+        }
+    .visionText{
+        display: flex;
+        justify-content: space-between;
+   
+    }
+    .visionText div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+       
+    }
+  
+    .visionblock {
+        height: 420px;
+        width: 100%;
+        position: relative;
+        border-radius: 10%;
+        width: 350px;
+       
+       
+    }
+   
+    .visionblock div:last-child{
+        position: absolute;
+      padding: 20px;
+      padding-top: 250px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: left ;
+       
+    }
+
+ .visionblock div:last-child h1{
+    color:grey !important;
+ -webkit-text-fill-color: rgb(198, 198, 198);
+ background-clip: unset;
+ background: transparent;
+ font-size: 32px;
+ text-align: left;
+ font-weight: 500;
+ width: 90%;
+ padding-top: 15px;
+ margin-bottom: 0px;
+ }
+  .visionblock div:last-child p{
+    color:grey !important;
+ -webkit-text-fill-color: rgb(198, 198, 198);
+ background-clip: unset;
+ background: transparent;
+ font-size: 12px;
+ text-align: left;
+ font-weight: 500;
+ width: 90%;
+ margin: 0;
+ padding: 0;
+ margin: auto;
+ 
+ }
+
+    .visionblock div:last-child img{
+       filter: brightness(0.5);
+    }

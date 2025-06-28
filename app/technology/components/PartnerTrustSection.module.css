@@ -1,0 +1,242 @@
+/* PartnerTrustSection.module.css */
+
+.container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  position: relative;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 60px;
+}
+.badgesCard {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  max-width: 800px; 
+  margin: 0 auto 60px;
+}
+
+
+.badgesContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+ 
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-direction: row;
+}
+
+.badgeIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.badgeTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.badgeSubtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.description {
+  font-size: clamp(1rem, 1.1vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.767);
+  line-height: 1.6;
+  margin-bottom: 50px;
+  font-weight: 300;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  font-size: 20px !important;
+}
+
+
+.demoButton {
+  padding: 16px 48px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demoButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.demoButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .badgesContainer {
+    gap: 40px;
+  }
+  
+  .badge {
+    gap: 12px;
+  }
+  
+  .badgeIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .badgeTitle,
+  .badgeSubtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 16px;
+  }
+  
+  .subtitle {
+    margin-bottom: 40px;
+  }
+  
+  .badgesCard {
+    padding: 32px 24px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+  }
+  
+  .badgesCard::before {
+    border-radius: 20px;
+  }
+  
+  .badgesContainer {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .badge {
+    justify-content: center;
+  }
+  
+  .description {
+    margin-bottom: 40px;
+  }
+  
+  .description br {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .badgesCard {
+    padding: 24px 20px;
+  }
+  
+  .badgesContainer {
+    gap: 24px;
+  }
+  
+  .badge {
+    gap: 12px;
+  }
+  
+  .badgeIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .badgeTitle,
+  .badgeSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .demoButton {
+    padding: 14px 36px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Hover effect for the badges card */
+@media (hover: hover) {
+  .badgesCard:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
