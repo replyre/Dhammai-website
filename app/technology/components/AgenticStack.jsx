@@ -32,6 +32,23 @@ const AgenticStack = () => {
         </div>
         </div>
      </div>
+     <div className={styles.row2}>
+        <div>
+            <img src="/eye-off.png" alt="" />
+            <h1>Privacy-First <br/> Deployment</h1>
+            <p>on-prem or private cloud</p>
+        </div>
+        <div>
+             <img src="/codepen.png" alt="" />
+            <h1>Cross-Domain  <br/> Context Fusion</h1>
+            <p>pulls signals from LMS, ERP, IoT, CRM</p>
+        </div>
+        <div>
+             <img src="/refresh-cw.png" alt="" />
+            <h1>Self-Optimising  <br/>Workflows</h1>
+            <p>agents learn and improve without manual scripts</p>
+        </div>
+     </div>
     </div>
   );
 };

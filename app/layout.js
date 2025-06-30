@@ -14,13 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Dhamm.ai",
-  description: "hamm AI combines Agentic RAG, Deep Knowledge Tracing, and edge-speed inference into a single, privacy-first stack. Everything runs on your servers or private cloud, so content never leaves campus. Learners, faculty, and administrators get real-time, multilingual, multimodal answers.",
+  title: "DHAMM.AI",
+  description: "Dhamm AI combines Agentic RAG, Deep Knowledge Tracing, and edge-speed inference into a single, privacy-first stack. Everything runs on your servers or private cloud, so content never leaves campus. Learners, faculty, and administrators get real-time, multilingual, multimodal answers.",
+  
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         {children}

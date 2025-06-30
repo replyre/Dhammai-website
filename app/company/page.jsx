@@ -5,8 +5,8 @@ import Timeline2 from './component/Timeline2'
 
 const Company = () => {
   return (
-    <div class={styles.contianer} 
-    >
+    <div className={styles.contianer}  >
+      <div className={styles.overlay} ></div>
       <div className={styles.dome}>
        <p>Our Mission</p> 
        <h1>Technology for All</h1>
