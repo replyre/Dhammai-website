@@ -1,43 +1,66 @@
+// FooterSection.jsx
+"use client"
 import React from 'react';
 import styles from './Footer.module.css';
 import { FaXTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa6';
+import { GiShipWheel } from 'react-icons/gi';
 
 const FooterSection = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+    alert('Email submitted!');
+  };
+
   return (
     <footer className={styles.footer}>
-      <div className={styles.navbar}>
-        <div className={styles.logo}>
-          {/* Replace with actual logo or image if needed */}
-          <span><img src="/logo.png" height={"50px"} alt="" /></span>
-        </div>
-        <ul className={styles.navLinks}>
-          <li>Home</li>
-          <li>Company</li>
-          <li>Technology</li>
-          <li>Careers</li>
-          <li>Our Blog</li>
-        </ul>
-        <div className={styles.socialIcons}>
-          <FaXTwitter />
-          <FaFacebookF />
-          <FaInstagram />
-          <FaLinkedinIn />
-        </div>
-      </div>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Navigation Links */}
+          <nav className={styles.navigation}>
+            {/* Logo */}
+           
+              <img src="logo.png" height={"30px"} />
 
-      <hr className={styles.divider} />
-
-      <div className={styles.subscribeBox}>
-        <h2 className={styles.heading}>
-          Get in touch with us
-        </h2>
-        <form className={styles.form}>
-          <div className={styles.inputWrapper}>
-            <FaEnvelope className={styles.icon} />
-            <input type="email" placeholder="Enter your email" />
+            
+            {/* Navigation Links */}
+            <ul className={styles.navLinks}>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#company">Company</a></li>
+              <li><a href="#technology">Technology</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+            
+            {/* Social Icons */}
+            <div className={styles.socialIcons}>
+              <a href="#" aria-label="Twitter"><FaXTwitter /></a>
+              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+              <a href="#" aria-label="Instagram"><FaInstagram /></a>
+              <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            </div>
+          </nav>
+          
+          {/* Contact Section */}
+          <div className={styles.contactSection}>
+            <h2 className={styles.heading}>Get in touch with us</h2>
+            
+            <form className={styles.emailForm} onSubmit={handleSubmit}>
+              <div className={styles.inputWrapper}>
+                <FaEnvelope className={styles.emailIcon} />
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  required
+                  className={styles.emailInput}
+                />
+              </div>
+              <button type="submit" className={styles.submitBtn}>
+                Submit
+              </button>
+            </form>
           </div>
-          <button type="submit" className={styles.submitBtn}>Submit</button>
-        </form>
+        </div>
       </div>
     </footer>
   );
