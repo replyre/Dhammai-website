@@ -71,3 +71,46 @@
     color: transparent;
   }
 }
+
+@media (max-width: 768px){
+  .gradient-container {
+  width: 100%;
+  height: 90vh;
+  max-height: 900px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0px 0px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 20px;
+  z-index: 20;
+  
+}
+@media (max-height: 760px){
+  .gradient-container {
+  width: 100%;
+  height: 90vh;
+  
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0px 0px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 60%;
+  z-index: 20;
+  
+  
+}
+}
+.gradient-background {
+  display: none;
+}
+.text-content {
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+}
+
+}
