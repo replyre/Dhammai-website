@@ -109,9 +109,16 @@
 }
 
 
-@media (max-width: 768px){
+.container{
+  margin-top: 200px;
+}
+
+@media (min-height: 768px){
   .container{
-    margin-top: 200px;
+    position: relative;
+     margin-top: 00px;
+    top:-300px;
+    
   }
 
 }

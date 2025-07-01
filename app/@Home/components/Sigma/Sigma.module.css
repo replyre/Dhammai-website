@@ -72,7 +72,12 @@
 }
 
 @media (max-width: 768px){
-
+.sigmaContainer{
+    height: 90vh;
+    width:100%;
+    top:-200px;
+    position: relative;
+}
     .sigmaHeading{
     margin-top: 20px;
     position: absolute;

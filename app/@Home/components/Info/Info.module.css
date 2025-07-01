@@ -50,7 +50,7 @@
     height: 2px;
     background: linear-gradient(to right, #c0c0c0, #000000);
     border: none;
-    margin: 20px 0;;
+    margin: 20px 0;
 }
 .term {
   color: #aaa;
@@ -97,6 +97,13 @@
 }
 
 /* Responsive Design */
+
+@media (min-height: 768px){
+   .infoSection{
+    top:-200px;
+   }
+}
+
 @media (max-width: 768px) {
   .infoSection {
   width: 100%;

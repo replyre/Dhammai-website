@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './Footer.module.css';
 import { FaXTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope } from 'react-icons/fa6';
 import { GiShipWheel } from 'react-icons/gi';
+import Link from 'next/link';
 
 const FooterSection = () => {
   const handleSubmit = (e) => {
@@ -24,13 +25,13 @@ const FooterSection = () => {
 
             
             {/* Navigation Links */}
-            <ul className={styles.navLinks}>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#company">Company</a></li>
-              <li><a href="#technology">Technology</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="#blog">Blog</a></li>
-            </ul>
+           <ul className={styles.navLinks}>
+ 
+  <li><Link href="/company">Company</Link></li>
+  <li><Link href="/technology">Technology</Link></li>
+  <li><Link href="/careers">Careers</Link></li>
+  <li><Link href="/blog">Blog</Link></li>
+</ul>
             
             {/* Social Icons */}
             <div className={styles.socialIcons}>

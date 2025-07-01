@@ -85,6 +85,8 @@
   padding: 5px; 
 } 
 
+
+
 .logoSlides {   
   display: inline-block;   
   margin: auto;    
@@ -290,4 +292,19 @@
   .logoSlides img {
     height: 35px;
   }
+}
+
+@media (min-height: 768px){
+    .bloomheading {
+      position: relative;
+    top:-100px;
+    
+  }
+  .fourpartsContainer {
+    margin: 0;
+    padding: 10px 20px ;
+    
+     top:-200px;
+  }
+
 }
