@@ -1,32 +1,44 @@
 "use client"
 import React, { useRef } from 'react'
 import Image from 'next/image'
-import styles from '../TechnologyT1.module.css'
+import styles from '../TechnologyT3.module.css'
 
 const productHighlights = [
   {
-    title: "AdminFlow Automator",
-    description: "Agents run fees, timetables, and compliance reports—no spreadsheets."
+    title: "Predictive Maintenance",
+    description: "Continuously listens to sensor data, forecasts part failures weeks in advance, and schedules service automatically, cutting unplanned downtime by 30-45%."
   },
   {
-    title: "AR/VR Lab Kit",
-    description: "Immersive experiments and virtual field trips on any device."
+    title: "Vision Quality Control",
+    description: "High-speed cameras and edge AI inspect every unit on the line, flagging surface or dimensional defects with > 95% accuracy before they reach packing."
   },
   {
-    title: "Parent Pulse App",
-    description: "Marks, mood, homework—all in one scroll for parents."
+    title: "Production Planner",
+    description: "AI matches live demand, inventory, and machine capacity to generate shift-by-shift schedules that reduce over-production and raw-material waste."
   },
   {
-    title: "Adaptive Mastery Paths",
-    description: "Dynamic pathways that evolve with every quiz and activity."
+    title: "Lead Scorer & Upsell AI",
+    description: "Analyses CRM histories and website intent signals to rank prospects, suggest tailored offers, and improve close rates and cross-sell revenue."
   },
   {
-    title: "Teacher Toolkit",
-    description: "AI coach suggests resources, benchmarks, and micro-training."
+    title: "Marketing Automation Suite",
+    description: "Orchestrates multi-channel campaigns—email, WhatsApp, SMS, ads—and retunes budgets in real time based on engagement and ROAS metrics."
   },
   {
-    title: "NEP Planner & Assess",
-    description: "Drag-and-drop syllabus builder with auto-generated, policy-aligned tests."
+    title: "Geo Heat-Mapping",
+    description: "Combines sales, service, and demographic layers into interactive maps to pinpoint the best new outlet locations or optimise field-service routes."
+  },
+  {
+    title: "Chatbots & Assistants",
+    description: "24/7 multilingual bots answer FAQs instantly and hand off nuanced issues to human agents with full context, enhancing customer experience."
+  },
+  {
+    title: "Knowledge Memory Hub",
+    description: "Creates a unified, zero-ETL graph of SOPs, manuals, and tickets so staff can retrieve the right document or fix script in seconds with natural language."
+  },
+  {
+    title: "Employee Re-Skill LMS",
+    description: "Provides adaptive micro-courses, tracks competency gaps, and recommends next modules—keeping teams ready for new machinery and workflows."
   }
 ];
 
@@ -53,7 +65,7 @@ const ProductHighlightsSection = () => {
 
   return (
     <div className={`${styles.section4} `}>
-      <h2 className={`${styles.productTitle} gradient-text2`}>Product Highlights</h2>
+      <h2 className={styles.productTitle}>Product Highlights</h2>
       
       <div className={styles.carouselContainer}>
         <div className={styles.productGrid} ref={scrollContainerRef}>

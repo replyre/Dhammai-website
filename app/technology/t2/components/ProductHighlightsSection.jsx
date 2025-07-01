@@ -87,7 +87,7 @@ const productHighlights = [
 
 const ProductHighlightsSection = () => {
   const scrollContainerRef = useRef(null);
-  
+
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({
@@ -111,27 +111,27 @@ const ProductHighlightsSection = () => {
       <h2 className={`${styles.productTitle} gradient-text`}>Problem & Fix Mini-Table</h2>
 
       <div className={styles.kpiTable}>
-          {/* Table Header */}
-          <div className={styles.tableHeader}>
-            <div className={styles.headerCell}>PAIN POINTS</div>
-            <div className={styles.headerCell}>ONE CAMPUS AGENTIC FX</div>
-          </div>
-          
-          {/* Table Rows */}
-          <div className={styles.tableBody}>
-            {kpiData.map((item, index) => (
-              <div key={index} className={styles.tableRow}>
-                <div className={styles.painPointCell}>
-                  {item.painPoint}
-                </div>
-                <div className={styles.solutionCell}>
-                  {item.solution}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Table Header */}
+        <div className={styles.tableHeader}>
+          <div className={styles.headerCell}>PAIN POINTS</div>
+          <div className={styles.headerCell}>ONE CAMPUS AGENTIC FX</div>
         </div>
-      
+
+        {/* Table Rows */}
+        <div className={styles.tableBody}>
+          {kpiData.map((item, index) => (
+            <div key={index} className={styles.tableRow}>
+              <div className={styles.painPointCell}>
+                {item.painPoint}
+              </div>
+              <div className={styles.solutionCell}>
+                {item.solution}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className={styles.carouselContainer}>
         <div className={styles.productGrid} ref={scrollContainerRef}>
           {productHighlights.map((product, index) => (
@@ -149,7 +149,7 @@ const ProductHighlightsSection = () => {
             </div>
           ))}
         </div>
-        
+
         <div className={styles.carouselNavigation}>
           <button className={styles.navButton} onClick={scrollLeft}>
             <Image
