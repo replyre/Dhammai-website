@@ -26,7 +26,7 @@ const ImpactSnapshotSection = () => {
     <div className={styles.impactSection}>
       <div className={styles.impactContainer}>
         <div className={styles.impactContent}>
-          <h2 className={styles.impactTitle}>Impact Snapshot</h2>
+          <h2 className={`${styles.impactTitle} gradient-text2`}>Impact Snapshot</h2>
           
           <div className={styles.statsGrid}>
             {impactStats.map((stat, index) => (

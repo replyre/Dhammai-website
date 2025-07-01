@@ -5,7 +5,7 @@ import styles from '../TechnologyT1.module.css'
 const StakeholderSection = () => {
   return (
     <div className={`${styles.section3} ${styles.section}`}>
-      <h2 className={styles.stakeholderTitle}>What do you get as a stakeholder</h2>
+      <h2 className={`${styles.stakeholderTitle} gradient-text`}>What do you get as a stakeholder</h2>
       
       <div className={styles.stakeholderGrid}>
         {/* Students Card */}
