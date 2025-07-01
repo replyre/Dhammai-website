@@ -1,0 +1,574 @@
+.section {
+  width: 70%;
+  margin: auto;
+}
+
+.section2 {
+  margin-top: 10rem;
+}
+
+.section3 {
+  margin-top: 10rem;
+  padding: 0 2rem;
+}
+
+.section4 {
+  margin-top: 10rem;
+  padding: 0 2rem;
+}
+
+.container {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: white;
+  position: relative;
+  margin-top: 150px;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.backButtonContainer {
+  width: 100%;
+}
+
+.backButton {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.imageContainer {
+  margin: 3rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 35rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.classroomImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.bottomDescription {
+  font-size: 1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  text-align: left;
+  margin-top: 2rem;
+  max-width: 800px;
+}
+
+/* KPI Table Styles */
+.kpiTable {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #666666;
+  width: 60%;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+}
+
+.kpiTable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, #666666, #000000) 1;
+  position: relative;
+  z-index: 1;
+}
+
+.headerCell {
+  padding: 24px 32px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.headerCell:last-child {
+  border-right: none;
+}
+
+.tableBody {
+  position: relative;
+  z-index: 1;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.painPointCell,
+.solutionCell {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.painPointCell:last-child,
+.solutionCell:last-child {
+  border-right: none;
+}
+
+.painPointCell {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.solutionCell {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 4rem 8rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+}
+
+.ctaContainer {
+  width: 83%;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.ctaSubtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #a0a0a0;
+  margin-bottom: 3rem;
+  line-height: 1.5;
+}
+
+.ctaHighlight {
+  color: #a0a0a0;
+  font-weight: 300;
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+}
+
+.ctaButton:hover {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* Product Highlights Section (if needed) */
+.productTitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #e5e5e5 50%, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.carouselContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(9, 320px);
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.productGrid::-webkit-scrollbar {
+  display: none;
+}
+
+.productCard {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  min-height: 200px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.productCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.productCard:hover::before {
+  left: 100%;
+}
+
+.checkIcon {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.productCardTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.productCardDescription {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.carouselNavigation {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.navButton {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navButton:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .content {
+    padding-top: 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .description,
+  .bottomDescription {
+    font-size: 0.9rem;
+  }
+
+  .imageContainer {
+    margin: 2rem 0;
+  }
+
+  .section3 {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+
+  .section4 {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+
+  .productTitle {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .productGrid {
+    grid-template-columns: repeat(6, 280px);
+    gap: 1.5rem;
+  }
+
+  .productCard {
+    padding: 1.5rem;
+    min-height: 180px;
+  }
+
+  .productCardTitle {
+    font-size: 1.1rem;
+  }
+
+  .productCardDescription {
+    font-size: 0.85rem;
+  }
+
+  .carouselNavigation {
+    margin-top: 2rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ctaSection {
+    margin-top: 8rem;
+    padding: 3rem 1rem;
+  }
+
+  .ctaTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .ctaButton {
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* KPI Table Mobile Styles */
+  .kpiTable {
+    width: 90%;
+    border-radius: 16px;
+  }
+  
+  .kpiTable::before {
+    border-radius: 16px;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .painPointCell,
+  .solutionCell {
+    padding: 24px 20px;
+  }
+  
+  .headerCell {
+    padding: 20px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .description,
+  .bottomDescription {
+    font-size: 0.85rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+
+  .ctaSubtitle {
+    font-size: 0.9rem;
+  }
+
+  /* KPI Table Small Mobile Styles */
+  .kpiTable {
+    width: 95%;
+  }
+
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .headerCell {
+    display: none;
+  }
+  
+  .tableRow {
+    flex-direction: column;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+  }
+  
+  .painPointCell,
+  .solutionCell {
+    padding: 8px 0;
+    border-right: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .painPointCell {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .solutionCell {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+} 

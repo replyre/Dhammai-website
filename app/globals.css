@@ -32,6 +32,13 @@ body {
   background-clip: text;
   color: transparent;
 }
+.gradient-text2 {
+  background: linear-gradient(to right, #e5e5e5 50%, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
 
 * {
   box-sizing: border-box;
