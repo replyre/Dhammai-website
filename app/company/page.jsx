@@ -15,6 +15,7 @@ const Company = () => {
       </div>
       <div className={styles.imgs}>
         <img className={styles.light} src="/light_beam.png" alt="" />
+        <img className={styles.lightbeam} src="/light_beam_mob.png" alt="" />
         <div className={styles.brain} ><img  src="/brain.png" alt="" /></div>
        
        <img  className={styles.brainbelow} src="/brainbelow.png" alt="" />

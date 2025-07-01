@@ -12,6 +12,10 @@
   padding: 60px 40px;
   
 }
+
+.lightbeam{
+  display: none;
+}
 .infoSection img{
     position: absolute;
     top:10%;  

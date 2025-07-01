@@ -71,6 +71,8 @@
   transform: translateY(-1px);
 }
 
+
+
 @media (max-width: 768px){
 .sigmaContainer{
     height: 90vh;
@@ -153,4 +155,9 @@
     position: relative;
 }
 
+}
+
+@media (max-height: 768px){
+   .sigmaContainer{ position: relative; top:100px;  height: 80vh; }
+   
 }
