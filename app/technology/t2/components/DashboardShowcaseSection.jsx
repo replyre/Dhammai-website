@@ -5,7 +5,7 @@ import styles from '../TechnologyT2.module.css'
 
 const DashboardShowcaseSection = () => {
   const scrollContainerRef = useRef(null)
-  const [centerIndex, setCenterIndex] = useState(2) // Start with middle card
+  const [centerIndex, setCenterIndex] = useState(1) 
 
   const dashboardImages = [
     {
@@ -52,8 +52,8 @@ const DashboardShowcaseSection = () => {
     <div className={styles.dashboardSection}>
       <div className={styles.dashboardContainer}>
         <div className={styles.dashboardHeader}>
-          <h2 className={styles.dashboardTitle}>
-            OneCampus — <span className={styles.dashboardSubtitle}>One Platform, Infinite Possibilities</span>
+          <h2 className={`${styles.dashboardTitle} gradient-text`}>
+            OneCampus — One Platform, Infinite Possibilities
           </h2>
         </div>
         

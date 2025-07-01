@@ -3,6 +3,29 @@ import React, { useRef } from 'react'
 import Image from 'next/image'
 import styles from '../TechnologyT2.module.css'
 
+const kpiData = [
+  {
+    painPoint: "Manual Grading & CO-PO Mapping",
+    solution: "AI Auto-Scores & Auto-Maps Outcomes"
+  },
+  {
+    painPoint: "Timetable Conflicts",
+    solution: "RNN Auto-Scheduler (< 1% Clashes)"
+  },
+  {
+    painPoint: "Siloed Data Across LMS / ERP",
+    solution: "Unified Knowledge Graph, Zero-ETL Search"
+  },
+  {
+    painPoint: "Slow Accreditation Prep",
+    solution: "One-Click NAAC/NBA Evidence Packs"
+  },
+  {
+    painPoint: "Low Engagement Analytics",
+    solution: "DKT Heat-Maps & Early Alerts"
+  }
+];
+
 const productHighlights = [
   {
     title: "Unified Real-Time Dashboards",
@@ -85,7 +108,29 @@ const ProductHighlightsSection = () => {
 
   return (
     <div className={`${styles.section4} `}>
-      <h2 className={styles.productTitle}>Product Highlights</h2>
+      <h2 className={`${styles.productTitle} gradient-text`}>Problem & Fix Mini-Table</h2>
+
+      <div className={styles.kpiTable}>
+          {/* Table Header */}
+          <div className={styles.tableHeader}>
+            <div className={styles.headerCell}>PAIN POINTS</div>
+            <div className={styles.headerCell}>ONE CAMPUS AGENTIC FX</div>
+          </div>
+          
+          {/* Table Rows */}
+          <div className={styles.tableBody}>
+            {kpiData.map((item, index) => (
+              <div key={index} className={styles.tableRow}>
+                <div className={styles.painPointCell}>
+                  {item.painPoint}
+                </div>
+                <div className={styles.solutionCell}>
+                  {item.solution}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       
       <div className={styles.carouselContainer}>
         <div className={styles.productGrid} ref={scrollContainerRef}>

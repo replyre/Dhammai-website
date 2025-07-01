@@ -1,4 +1,4 @@
-.section{
+.section {
   width: 70%;
   margin: auto;
 }
@@ -12,7 +12,8 @@
 }
 
 .section4 {
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
+  /* margin-top: 10rem; */
   padding: 0 2rem;
 }
 
@@ -78,14 +79,15 @@
 }
 
 .centerDevice {
-  transform: rotateY(-15deg) rotateX(5deg) scale(1.1) !important;
+  transform: rotateY(-545deg) rotateX(-25deg) rotateZ(15deg) !important;
   z-index: 10;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
 }
 
+/* 
 .centerDevice:hover {
-  transform: rotateY(-15deg) rotateX(5deg) scale(1.15) !important;
-}
+  transform: rotateY(-25deg) rotateX(15deg) rotateZ(-5deg) scale(1.15) !important;
+} */
 
 .dashboardDevice {
   width: 100%;
@@ -95,7 +97,225 @@
   transition: transform 0.3s ease;
 }
 
+/* LMS Section */
+.lmsSection {
+  padding: 6rem 2rem;
+  background: #0a0a0a;
+  position: relative;
+}
 
+.lmsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lmsTitle {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+  background: linear-gradient(to right, #e5e5e5 40%, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.lmsCardsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  position: relative;
+  transition: all 0.8s ease;
+}
+
+.lmsCard {
+  position: absolute;
+  width: 300px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  left: 50%;
+  transform: translateX(-50%) translateX(calc(var(--card-index) * 80px));
+  z-index: calc(var(--card-index) + 1);
+  backdrop-filter: blur(20px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 90%, rgba(255, 255, 255, 0.05) 100%);
+  
+}
+
+
+.lmsCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border-radius: 24px;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  /* background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent); */
+  /* transition: left 0.5s ease; */
+}
+
+.lmsCard:hover {
+  transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 350px)) scale(1.05) !important;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  z-index: 100 !important;
+}
+
+.cardsExpanded .lmsCard {
+  transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 350px));
+}
+
+.cardHovered {
+  transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 350px)) scale(1.05) !important;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  z-index: 100 !important;
+}
+
+.cardShrunk {
+  transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 350px)) scale(0.95) !important;
+  opacity: 0.7;
+}
+
+.cardIcon {
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* KPI Table Styles */
+.kpiTable {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #666666;
+  width: 60%;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 4rem;
+}
+
+.kpiTable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, #666666, #000000) 1;
+  position: relative;
+  z-index: 1;
+}
+
+.headerCell {
+  padding: 24px 32px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.headerCell:last-child {
+  border-right: none;
+}
+
+.tableBody {
+  position: relative;
+  z-index: 1;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.painPointCell,
+.solutionCell {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.painPointCell:last-child,
+.solutionCell:last-child {
+  border-right: none;
+}
+
+.painPointCell {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.solutionCell {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.4;
+}
 
 .ctaSection {
   padding: 4rem 8rem;
@@ -158,6 +378,11 @@
   text-align: center;
   margin-bottom: 4rem;
   line-height: 1.2;
+  background: linear-gradient(to right, #e5e5e5 50%, #111111);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .carouselContainer {
@@ -276,7 +501,7 @@
 
 
 
-.contentContainer{
+.contentContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -284,7 +509,7 @@
   gap: 2rem;
 }
 
-.backButtonContainer{
+.backButtonContainer {
   width: 100%;
 }
 
@@ -363,29 +588,29 @@
     width: 90%;
     padding: 1rem;
   }
-  
+
   .backButton {
     top: 1rem;
     left: 1rem;
   }
-  
+
   .content {
     padding-top: 3rem;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.25rem;
   }
-  
+
   .description,
   .bottomDescription {
     font-size: 0.9rem;
   }
-  
+
   .imageContainer {
     margin: 2rem 0;
   }
@@ -468,11 +693,115 @@
   }
 
   .centerDevice {
-    transform: rotateY(-10deg) rotateX(3deg) scale(1.05) !important;
+    transform: rotateY(-30deg) rotateX(12deg) rotateZ(-4deg) scale(1.05) !important;
   }
 
   .centerDevice:hover {
-    transform: rotateY(-10deg) rotateX(3deg) scale(1.1) !important;
+    transform: rotateY(-20deg) rotateX(12deg) rotateZ(-4deg) scale(1.1) !important;
+  }
+
+  .lmsSection {
+    padding: 4rem 1rem;
+  }
+
+  .lmsTitle {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+
+  }
+
+  .lmsCardsWrapper {
+    height: 350px;
+  }
+
+  .lmsCard {
+    width: 260px;
+    height: 280px;
+    padding: 2rem 1.5rem;
+    transform: translateX(-50%) translateX(calc(var(--card-index) * 60px));
+  }
+
+  .cardsExpanded .lmsCard {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 280px));
+  }
+
+  .cardHovered {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 280px)) scale(1.05) !important;
+  }
+
+  .cardShrunk {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 280px)) scale(0.95) !important;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardSubtitle {
+    font-size: 0.85rem;
+  }
+
+  /* KPI Table Mobile Styles */
+  .kpiTable {
+    border-radius: 16px;
+  }
+  
+  .kpiTable::before {
+    border-radius: 16px;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .headerCell {
+    display: none;
+  }
+  
+  .tableRow {
+    flex-direction: column;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+  }
+  
+  .painPointCell,
+  .solutionCell {
+    padding: 8px 0;
+    border-right: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .painPointCell {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .solutionCell {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+
+  /* KPI Table Responsive Styles */
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .painPointCell,
+  .solutionCell {
+    padding: 24px 20px;
+  }
+  
+  .headerCell {
+    padding: 20px;
+    font-size: 0.85rem;
   }
 }
 
@@ -480,11 +809,11 @@
   .title {
     font-size: 1.75rem;
   }
-  
+
   .subtitle {
     font-size: 1.1rem;
   }
-  
+
   .description,
   .bottomDescription {
     font-size: 0.85rem;
@@ -516,4 +845,66 @@
     width: 250px;
     height: 187px;
   }
-} 
+
+  .lmsSection {
+    padding: 3rem 0.5rem;
+  }
+
+  .lmsTitle {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .lmsCardsWrapper {
+    height: 320px;
+  }
+
+  .lmsCard {
+    width: 220px;
+    height: 250px;
+    padding: 1.5rem 1rem;
+    transform: translateX(-50%) translateX(calc(var(--card-index) * 50px));
+  }
+
+  .cardsExpanded .lmsCard {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 240px));
+  }
+
+  .cardHovered {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 240px)) scale(1.05) !important;
+  }
+
+  .cardShrunk {
+    transform: translateX(-50%) translateX(calc((var(--card-index) - 1.5) * 240px)) scale(0.95) !important;
+  }
+
+  .cardIcon {
+    margin-bottom: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardSubtitle {
+    font-size: 0.8rem;
+  }
+
+  /* KPI Table Small Mobile Styles */
+  .painPointCell,
+  .solutionCell {
+    padding: 6px 0;
+  }
+  
+  .painPointCell {
+    font-size: 0.85rem;
+  }
+  
+  .solutionCell {
+    font-size: 0.85rem;
+  }
+  
+  .tableRow {
+    padding: 16px;
+  }
+}

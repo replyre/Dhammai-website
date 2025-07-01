@@ -5,8 +5,8 @@ const CTASection = () => {
   return (
     <div className={styles.ctaSection}>
       <div className={styles.ctaContainer}>
-        <h2 className={styles.ctaTitle}>
-          Need something <span className={styles.ctaHighlight}>unique?</span>
+        <h2 className={`${styles.ctaTitle} gradient-text`}>
+          Need something unique
         </h2>
         <p className={styles.ctaSubtitle}>
           We build bespoke, pain-point-driven solutions on demand<br />
