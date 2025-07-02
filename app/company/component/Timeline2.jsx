@@ -24,6 +24,7 @@ const Timeline2 = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.mainTitle}> <p>Optimising the <br />Next Wave</p></h1>
+      <h1 className={styles.mainTitleMob}> <p>Optimising the Next Wave</p></h1>
       <p className={styles.mainDescription}>
         At Dhamm AI, 2025 is the dawn of hyper-local, privacy-first agentic intelligence.
       </p>

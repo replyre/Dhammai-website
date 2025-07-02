@@ -157,7 +157,7 @@
 
 }
 
-@media (max-height: 768px){
+@media (min-height: 768px) and (max-width: 768px){
    .sigmaContainer{ position: relative; top:100px;  height: 80vh; }
    
 }

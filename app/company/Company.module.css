@@ -46,6 +46,11 @@ background-clip: text;
    
  }
 
+ .lightbeam{
+    display: none;
+  
+ }
+
 .brain{
    position: absolute;
     top:400px;
@@ -82,13 +87,13 @@ background-clip: text;
    bottom: 0px;
    background: black;
    
-   background-color: red;
+   
 }
 
 .worldtext2{
    
    background: black;
-  
+ 
    width: 80%;
    margin: auto;
   
@@ -147,9 +152,7 @@ background-clip: text;
     top:-200px;
     z-index: 10;
     text-align: center;
-    
     margin: auto;
-
 }
 
 .text h1{
@@ -169,8 +172,6 @@ background-clip: text;
     line-height: 1.8;
     font-size: 1.4rem;
     color: grey;
-   
-
 } 
 
 .text span{
@@ -323,8 +324,7 @@ display: flex;
 .timeline2 div img{
   transform: rotate(90deg);
   filter: grayscale(100%);
-  
-  
+
 }
 
 /* Responsive Design */
@@ -388,7 +388,7 @@ background-clip: text;
 .lightbeam{
     position: absolute;
    padding-top: 30px;
-    
+    display: block;
    margin: auto;
    width: 100%;
    z-index: 1;
@@ -408,8 +408,6 @@ background-clip: text;
     z-index: 10;
     text-align: center;
     margin: auto;
-   
-
 }
 
 .text p{
@@ -464,8 +462,90 @@ background-clip: text;
 }
 
 .worldtext p{
-    font-size: 20px;
+    font-size: 16px;
     color: grey;
     padding: 10px 0px;
 }
+
+
+.worldtext2{
+   
+   background: black;
+  
+   width: 80%;
+   margin: auto;
+  
+   
+}
+
+.worldtext2 h1{
+    font-size: 30px;
+    padding-top: 100px;
+    font-weight: 400;
+        color: transparent;
+  background: linear-gradient(to top, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+text-align: left;
+width: fit-content;
+}
+
+.vision{
+   
+   grid-template-columns: repeat(1, 1fr);
+    position: relative;
+    
+    
+}
+.evolve{
+  display: none;
+}
+
+.timeline2{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    padding: 12px;
+   gap:0px;
+
+
+}
+
+.compimg{
+
+  width: 90vw;
+  
+}
+
+.timeline2 div img{
+  transform: rotate(90deg) scale(0.7);
+  filter: grayscale(100%);
+
+}
+
+.journeyTitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+.journeySubtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+
+  color: #77628D;}
+
+
 }

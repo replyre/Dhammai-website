@@ -1,37 +1,48 @@
 .container {
- 
   color: #fff;
-  width: 80%;
+  width: 100%;
   margin: auto;
   font-family: 'Segoe UI', sans-serif;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  padding: 150px;
+  
+  position: relative;
 }
-.leftTopShade{
+
+.leftTopShade {
   position: absolute;
-  top:0px;
+  top: 0px;
   left: 0px;
   z-index: -1;
+  
 }
-.rightTopShade{
+
+.rightTopShade {
   position: absolute;
-  top:0px;
+  top: 0px;
   right: 0px;
   transform: rotateY(180deg);
+  z-index: -1;
 }
+
 .header {
   display: flex;
   margin-bottom: 60px;
   align-items: center;
   justify-content: space-around;
-  
 }
 
-.arrow{
-    font-size: 20px;
-    display: block;
-    margin-bottom:10px;
+.arrow {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+
+.arrow:hover {
+  color: #fff;
+}
+
 .blogButton {
   background: #fff;
   color: #000;
@@ -49,9 +60,9 @@
   background-clip: text;
   color: transparent;
   background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header h1 span {
@@ -71,18 +82,17 @@ background-clip: text;
   font-size: 2rem;
   font-weight: 500;
   margin: 40px 0 20px;
-  margin-bottom:40px ;
+  margin-bottom: 40px;
   text-align: end;
-  
-}
-.latestBlogs h2 span{
-  color: transparent;
-  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
 }
 
+.latestBlogs h2 span {
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .featured {
   display: flex;
@@ -96,31 +106,35 @@ background-clip: text;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
   height: 300px;
 }
-.featuredDate{
-    color: grey;
-    margin-bottom: 20px;
-}
-.featuredTitle{
-    font-size: 3rem;
-    font-weight: 300;
-    width: 50%;
-    letter-spacing:0;
-}
-.featuredDescription{
-    padding: 15px 0px;
-    font-size: 1.5rem;
-    width: 80%;
-    color:rgb(217, 217, 217);
+
+.featuredDate {
+  color: grey;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
+.featuredTitle {
+  font-size: 3rem;
+  font-weight: 300;
+  width: 50%;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
 
-.divider{
-  height:2px;
-  background: linear-gradient(to right, black, grey, black ) ;
-  margin-bottom: 30px ;
+.featuredDescription {
+  padding: 15px 0px;
+  font-size: 1.5rem;
+  width: 80%;
+  color: rgb(217, 217, 217);
+  line-height: 1.4;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, black, grey, black);
+  margin-bottom: 30px;
 }
 
 .meta {
@@ -138,6 +152,12 @@ background-clip: text;
   padding: 5px 15px;
   border-radius: 20px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.readBtn:hover {
+  background: #ccc;
+  color: #000;
 }
 
 .featuredImg {
@@ -146,13 +166,19 @@ background-clip: text;
   object-fit: cover;
   border-radius: 8px;
   padding: 30px 0px;
-  
 }
 
-.featuredData{
-    color:silver;
-    width: 90%;
+.featuredData {
+  color: silver;
+  width: 90%;
+  line-height: 1.6;
+  font-size: 1rem;
 }
+
+.featuredData p {
+  margin-bottom: 0;
+}
+
 .cards {
   display: flex;
   gap: 20px;
@@ -176,9 +202,277 @@ background-clip: text;
 .card h4 {
   font-size: 1rem;
   margin: 10px 0;
+  line-height: 1.3;
 }
 
 .card p {
   font-size: 0.9rem;
   color: #aaa;
+  line-height: 1.4;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .container {
+    width: 85%;
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+
+  .featuredTitle {
+    font-size: 2.5rem;
+    width: 60%;
+  }
+
+  .featuredDescription {
+    font-size: 1.3rem;
+  }
+
+  .featuredImg {
+    height: 400px;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Small Tablet / Large Mobile */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .leftTopShade,
+  .rightTopShade {
+    display: none;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .arrow {
+    font-size: 18px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+  }
+
+  .featuredDate {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .featuredTitle {
+    font-size: 2rem;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .featuredDescription {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px 0px;
+  }
+
+  .featuredImg {
+    width: 100%;
+    height: 300px;
+    padding: 20px 0px;
+  }
+
+  .featuredData {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .featured {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .featuredText {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .latestBlogs h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 30px 0 15px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .meta {
+    margin-right: 0;
+    margin-top: 15px;
+  }
+
+  .divider {
+    margin-bottom: 25px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding: 0 10px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .arrow {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .featuredDate {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+
+  .featuredTitle {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .featuredDescription {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 8px 0px;
+  }
+
+  .featuredImg {
+    height: 250px;
+    padding: 15px 0px;
+  }
+
+  .featuredData {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .latestBlogs h2 {
+    font-size: 1.3rem;
+    margin: 25px 0 12px;
+  }
+
+  .cards {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card h4 {
+    font-size: 0.95rem;
+    margin: 8px 0;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .meta {
+    margin-top: 12px;
+  }
+
+  .readBtn {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+  }
+
+  .divider {
+    margin-bottom: 20px;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+  .container {
+    width: 98%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 8px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .featuredTitle {
+    font-size: 1.4rem;
+  }
+
+  .featuredDescription {
+    font-size: 0.95rem;
+  }
+
+  .featuredImg {
+    height: 200px;
+    padding: 12px 0px;
+  }
+
+  .featuredData {
+    font-size: 0.85rem;
+  }
+
+  .latestBlogs h2 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .card h4 {
+    font-size: 0.9rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+
+  .readBtn {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+  }
 }

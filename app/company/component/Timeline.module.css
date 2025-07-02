@@ -97,3 +97,9 @@ max-width: 300px;
   color: #fff;
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .wrapper{
+    display: none;
+  }
+}

@@ -16,7 +16,7 @@ const BlogSection = () => {
   
   const others = blogPosts.slice(blogId+1,blogId+3);
       const handleBack = () => {
-        console.log("hi");
+       
         router.back();
       };
 

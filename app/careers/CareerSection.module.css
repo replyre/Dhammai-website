@@ -155,3 +155,79 @@ background-clip: text;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(160, 172, 165, 0.3);
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 2rem 1rem;
+    padding-top: 100px;
+  }
+
+  .textArea {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .textArea h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .textArea p {
+    width: 100%;
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  .imagePlaceholder {
+    height: 250px;
+    margin: 1.5rem 0;
+  }
+
+  .accordionButton {
+    font-size: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .accordionContent {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .applyButton {
+    margin-left: 0;
+  }
+
+  .exploreButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .leftTopShade,
+  .rightTopShade,
+  .rightmiddleShade,
+  .leftendShade {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .textArea h1 {
+    font-size: 1.8rem;
+  }
+
+  .accordionButton {
+    font-size: 1rem;
+  }
+
+  .accordionContent {
+    font-size: 0.95rem;
+  }
+
+  .applyButton {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}

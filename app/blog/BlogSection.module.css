@@ -187,3 +187,96 @@ background-clip: text;
   font-size: 0.9rem;
   color: #aaa;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .featuredText {
+    width: 100%;
+  }
+
+  .featuredImg {
+    width: 100%;
+    height: 250px;
+  }
+
+  .searchBox {
+    width: 40%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .searchBox {
+    width: 100%;
+    margin: 0;
+  }
+
+  .latestBlogs h2 {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  .featured {
+    flex-direction: column;
+  }
+
+  .featuredText {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .featuredText p {
+    width: 100%;
+  }
+
+  .meta {
+    margin-right: 0;
+  }
+
+  .featuredImg {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .featuredText h3 {
+    font-size: 1rem;
+  }
+
+  .featuredText p {
+    font-size: 0.9rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .searchBox {
+    padding: 10px 16px;
+  }
+
+  .readBtn {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}

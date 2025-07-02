@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   padding: 60px 40px;
+ 
   
 }
 
@@ -102,10 +103,10 @@
 
 /* Responsive Design */
 
-@media (min-height: 768px){
-   .infoSection{
-    top:-200px;
-   }
+@media (min-height: 768px) and (max-width: 768px) {
+  .infoSection {
+    top: -200px;
+  }
 }
 
 @media (max-width: 768px) {
