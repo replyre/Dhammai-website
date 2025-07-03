@@ -2,7 +2,7 @@
         padding-top: 100px;
         width: 80%;
         margin: auto;
-       
+      
         position: relative;
     }
     .values::before{
@@ -86,3 +86,18 @@
        filter: brightness(0.5);
     }
 
+@media (max-width: 768px){
+ .visionText{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+   
+    }
+      .values{
+        padding-top: 100px;
+        width: 95%;
+        margin: auto;
+      
+        position: relative;
+    }
+}

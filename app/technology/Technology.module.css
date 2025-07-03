@@ -77,3 +77,55 @@ width: fit-content;
 .imgContainer span{
     color: white;
 }
+
+@media (max-width: 768px){
+    .container p{
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;   
+    color:#848484;
+}
+.container h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0.5rem 0rem;
+    vertical-align: middle;
+        color: transparent;
+  background: linear-gradient(83deg, #464646 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container{
+    margin-top: 100px;
+    
+}
+.overlay{
+   display: none;
+}
+
+.imgContainer img{
+    padding: 20px;
+    height: 250px;
+    width:360px;
+   
+}
+
+.imgContainer::before{
+   display: none;
+}
+
+.imgContainer p{
+    width: 130%;
+    margin: 0;
+        text-align: left;
+    font-size: 12px;
+   text-transform: unset;
+   
+      
+}
+}
