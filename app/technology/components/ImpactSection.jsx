@@ -33,6 +33,7 @@ const ImpactSection = () => {
         </p>
         
         <div className={styles.impactCard}>
+         
           <div className={styles.statsContainer}>
             {impactData.map((stat, index) => (
               <div key={index} className={styles.statItem}>

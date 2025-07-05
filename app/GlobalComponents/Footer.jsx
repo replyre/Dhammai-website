@@ -35,10 +35,10 @@ const FooterSection = () => {
             
             {/* Social Icons */}
             <div className={styles.socialIcons}>
-              <a href="#" aria-label="Twitter"><FaXTwitter /></a>
-              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+              <a href="https://x.com/dhammxai?t=W-9J_ftSeyGQTW8OGLWyjw&s=08" aria-label="Twitter"><FaXTwitter /></a>
+              <a href="https://www.facebook.com/share/16dhiS4Ae8/" aria-label="Facebook"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/dhamm.ai?igsh=OWc0bzMwZ2M1a2k3&utm_source=qr" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/company/dhamm-ai/" aria-label="LinkedIn"><FaLinkedinIn /></a>
             </div>
           </nav>
           

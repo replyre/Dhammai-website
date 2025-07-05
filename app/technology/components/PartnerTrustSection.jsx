@@ -23,7 +23,10 @@ const PartnerTrustSection = () => {
 
   return (
     <div className={styles.container}>
+       <video className={styles.vid1} src="/partner.mp4" loop autoPlay muted></video>
       <div className={styles.content}>
+        
+          <video className={styles.vid2} src="/partner.mp4" loop autoPlay muted></video>
         <h1 className={styles.title}>Partner & Trust Wall</h1>
         <p className={styles.subtitle}>OUR BADGES</p>
         

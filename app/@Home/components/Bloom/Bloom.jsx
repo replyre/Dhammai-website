@@ -32,7 +32,7 @@ const Bloom = () => {
             
             >
                 <div className={styles.overlay}></div>
-                <h5>Trusted by  Primier Institutions</h5>
+                <h5>Trusted by  Premier Institutions</h5>
                 <div className={styles.logoSlides}>
                     <img src="partnerlogo0.png" alt="" />
                     <img src="partnerlogo1.png" alt="" />

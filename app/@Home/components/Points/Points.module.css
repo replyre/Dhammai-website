@@ -128,7 +128,6 @@
 
   
   .pointsContainer1 {
- 
   height: 400px;
   width: 90%;
   margin: 0 auto;
@@ -211,10 +210,11 @@
 
 .text2{
     position: absolute;
-  top: 80%;
+  top: 320px !important;
   text-align: center;
   width: 400px;
   left: -5%;
+
 }
 
 .text h2,
@@ -233,4 +233,8 @@
   text-align: left;
 }
 
+}
+
+@media (min-height: 768px) and (max-width: 768px) {
+ 
 }

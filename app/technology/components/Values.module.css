@@ -90,14 +90,20 @@
  .visionText{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        gap:20px;
+       
    
     }
       .values{
         padding-top: 100px;
         width: 95%;
         margin: auto;
-      
+        
         position: relative;
+    }
+
+    .visionblock{
+       
     }
 }

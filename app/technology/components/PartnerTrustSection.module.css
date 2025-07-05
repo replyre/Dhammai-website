@@ -8,6 +8,7 @@
   justify-content: center;
   background: black;
   position: relative;
+  
 }
 
 .content {
@@ -15,7 +16,6 @@
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  
 }
 
 .title {
@@ -37,7 +37,8 @@
 }
 .badgesCard {
   /* Glassmorphism Effect */
-  background: rgba(255, 255, 255, 0.04);
+ background: black;
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 24px;
@@ -69,14 +70,20 @@
 }
 
 .badgeIcon {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
   flex-shrink: 0;
+
+}
+
+.badgeIcon img{
+   width: 100px;
+  height: 100px;
 }
 
 .badgeText {
@@ -138,6 +145,30 @@
 
 .demoButton:active {
   transform: translateY(0);
+}
+
+
+.vid1{
+  position: absolute;
+  width: 30%;
+  top:150px;
+  left:-170px;
+  transform: rotatez(30deg) rotateY(180deg);
+  opacity: 0.7;
+  filter: grayscale(100);
+  border-radius: 100%;
+  
+}
+.vid2{
+  position: absolute;
+  width: 30%;
+  top:150px;
+  right:-170px;
+  transform: rotatez(-30deg) rotateY(0deg);
+  opacity: 0.7;
+  filter: grayscale(100);
+  border-radius:  100%;
+  
 }
 
 /* Responsive Design */

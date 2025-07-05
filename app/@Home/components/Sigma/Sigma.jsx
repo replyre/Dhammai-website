@@ -4,7 +4,7 @@ const Sigma = () => {
   return (
     <div className={styles.sigmaContainer}>
         <video src="/sigma.mp4" loop muted autoPlay></video>
-        <img src="/graph.png" alt="" />
+        <img src="/bigbang2.png" alt="" />
         <div className={styles.sigmaHeading}>
         <h2>Optimising How <br/>Humans Learn</h2>
         <p>From 1 : 1 to 1 : ∞ - without losing the magic</p>
