@@ -390,7 +390,7 @@
 @media (max-width: 768px) {
   .section {
     width: 90%;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .backButton {
@@ -399,7 +399,7 @@
   }
 
   .content {
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
 
   .title {
@@ -417,6 +417,7 @@
 
   .imageContainer {
     margin: 2rem 0;
+    height: fit-content;
   }
 
   .section3 {
@@ -435,7 +436,7 @@
   }
 
   .productGrid {
-    grid-template-columns: repeat(6, 280px);
+   
     gap: 1.5rem;
   }
 

@@ -90,6 +90,7 @@ const ContactForm = () => {
             className={styles.formTextarea}
             placeholder="Enter your project details"
             rows="4"
+            style={{resize:"none"}}
           />
         </label>
 
@@ -111,7 +112,7 @@ const ContactForm = () => {
 
         <div className={styles.checkboxWrapper}>
           <input type="checkbox" />
-          <span>Agree to send info to Dhanm.AI</span>
+          <span>Agree to send info to Dhamm.AI</span>
         </div>
 
         <button type="submit" className={styles.submitButton}>

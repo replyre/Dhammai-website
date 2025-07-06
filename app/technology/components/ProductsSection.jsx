@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { FiCheck } from 'react-icons/fi';
 import styles from './ProductsSection.module.css';
 
@@ -11,7 +12,8 @@ const ProductsSection = () => {
         "Adaptive learning dashboards",
         "Personalised workflows",
         "Unified Campus Ecosystem - LMS, ERP, research data on one hub"
-      ]
+      ],
+      link: "technology/t1" // Add your actual URL here
     },
     {
       title: "K-12 Schools",
@@ -20,7 +22,8 @@ const ProductsSection = () => {
         "Mastery paths, NEP-aligned",
         "Real-time parent reports",
         "Whole-School Ecosystem - teachers, students, parents in a single loop"
-      ]
+      ],
+      link: "technology/t2" // Add your actual URL here
     },
     {
       title: "Enterprise",
@@ -29,7 +32,8 @@ const ProductsSection = () => {
         "Zero-ETL knowledge agents",
         "Predictive-maintenance toolkit",
         "End-to-End Ecosystem - OT sensors, CRM, ERP all in one graph"
-      ]
+      ],
+      link: "technology/t3" // Add your actual URL here
     }
   ];
 
@@ -60,9 +64,12 @@ const ProductsSection = () => {
                   ))}
                 </div>
                 
-                <button className={styles.knowMoreBtn}>
+                <Link 
+                  href={product.link} 
+                  className={styles.knowMoreBtn}
+                >
                   Know More
-                </button>
+                </Link>
               </div>
             </div>
           ))}

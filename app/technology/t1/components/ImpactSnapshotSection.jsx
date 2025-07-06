@@ -40,11 +40,19 @@ const ImpactSnapshotSection = () => {
         
         <div className={styles.deviceContainer}>
           <Image
-            src="/technologyt1mobile.svg"
+            src="/t1.gif"
             alt="Digital device showing platform interface"
             width={400}
             height={500}
             className={styles.deviceImage}
+            priority
+          />
+          <Image
+            src="/t1.gif"
+            alt="Digital device showing platform interface"
+            width={400}
+            height={500}
+            className={styles.deviceImage2}
             priority
           />
         </div>

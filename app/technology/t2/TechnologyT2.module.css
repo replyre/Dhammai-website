@@ -17,6 +17,7 @@
   padding: 0 2rem;
 }
 
+
 /* Dashboard Showcase Section */
 .dashboardSection {
   padding: 4rem 2rem;
@@ -584,8 +585,15 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+.kpiTable{
+ width: 80%;
+}
+  .lmsSection{
+    display: none;
+  }
+
   .section {
-    width: 90%;
+    width: 95%;
     padding: 1rem;
   }
 
@@ -595,9 +603,12 @@
   }
 
   .content {
-    padding-top: 3rem;
+    padding-top: 1rem;
   }
 
+  .imageContainer{
+    height: fit-content;
+  }
   .title {
     font-size: 2rem;
   }

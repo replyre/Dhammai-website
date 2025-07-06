@@ -161,10 +161,11 @@ const ProductHighlightsSection = () => {
           </button>
           <button className={styles.navButton} onClick={scrollRight}>
             <Image
-              src="/technologyt1right.svg"
+              src="/technologyt1left.svg"
               alt="Scroll right"
               width={24}
               height={24}
+              style={{transform:"rotate(180deg)"}}
             />
           </button>
         </div>
