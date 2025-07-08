@@ -27,7 +27,7 @@ const HeroSection = () => {
         {/* Corporate Office Image */}
         <div className={styles.imageContainer}>
           <Image
-            src="/technologyt3home.png"
+            src="/Technologyt3Home.png"
             alt="Corporate office with city skyline view"
             width={800}
             height={400}

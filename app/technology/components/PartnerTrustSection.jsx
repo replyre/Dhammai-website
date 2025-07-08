@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiShield, FiTriangle, FiAward } from 'react-icons/fi';
 import styles from './PartnerTrustSection.module.css';
+import Link from 'next/link';
 
 const PartnerTrustSection = () => {
   const badges = [
@@ -51,9 +52,9 @@ const PartnerTrustSection = () => {
           Tailor-Made AI Solutions For Every Unique Use Case.
         </p>
         
-        <button className={styles.demoButton}>
+        <Link  href={"/contact"} className={styles.demoButton}>
           Book a Demo
-        </button>
+        </Link>
       </div>
     </div>
   );

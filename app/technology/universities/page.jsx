@@ -8,6 +8,8 @@ import CTASection from './components/CTASection'
 
 const Technology2 = () => {
     return (
+        <>
+         <div className={styles.overlay}></div>
         <div className={styles.container}>
             <HeroSection />
             <DashboardShowcaseSection />
@@ -15,6 +17,7 @@ const Technology2 = () => {
             <ProductHighlightsSection />
             <CTASection />
         </div>
+        </>
     )
 }
 

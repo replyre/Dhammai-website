@@ -52,7 +52,10 @@ const ProductHighlightsSection = () => {
   };
 
   return (
+    <>
+     <div className={styles.overlay2}></div>
     <div className={`${styles.section4} `}>
+       
       <h2 className={`${styles.productTitle} gradient-text2`}>Product Highlights</h2>
       
       <div className={styles.carouselContainer}>
@@ -93,6 +96,7 @@ const ProductHighlightsSection = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

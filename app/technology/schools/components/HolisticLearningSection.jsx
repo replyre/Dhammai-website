@@ -5,6 +5,9 @@ import styles from '../TechnologyT1.module.css'
 const HolisticLearningSection = () => {
   return (
     <div className={`${styles.section2}`}>
+        <video className={styles.vid1} src="/partner.mp4" loop autoPlay muted></video>
+                  <video className={styles.vid2} src="/partner.mp4" loop autoPlay muted></video>
+
       <div className={styles.holisticContainer}>
         <Image
           src="/technologyt1HolisticLearning.png"

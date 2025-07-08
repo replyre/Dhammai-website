@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Company.module.css'
 import Timeline from './component/Timeline'
 import Timeline2 from './component/Timeline2'
+import Link from 'next/link'
 
 const Company = () => {
   return (
@@ -80,9 +81,9 @@ const Company = () => {
         this time with you on board!
       </p>
     </div>
-    <button className={styles.ctaButton}>
+    <Link href={"/contact"} className={styles.ctaButton}>
       Reach out Now!
-    </button>
+    </Link>
   </div>
 </section>
     </div>

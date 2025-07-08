@@ -13,7 +13,7 @@ const ProductsSection = () => {
         "Personalised workflows",
         "Unified Campus Ecosystem - LMS, ERP, research data on one hub"
       ],
-      link: "technology/t1" // Add your actual URL here
+      link: "technology/universities" 
     },
     {
       title: "K-12 Schools",
@@ -23,7 +23,7 @@ const ProductsSection = () => {
         "Real-time parent reports",
         "Whole-School Ecosystem - teachers, students, parents in a single loop"
       ],
-      link: "technology/t2" // Add your actual URL here
+      link: "technology/schools" 
     },
     {
       title: "Enterprise",
@@ -33,7 +33,7 @@ const ProductsSection = () => {
         "Predictive-maintenance toolkit",
         "End-to-End Ecosystem - OT sensors, CRM, ERP all in one graph"
       ],
-      link: "technology/t3" // Add your actual URL here
+      link: "technology/enterprise" 
     }
   ];
 

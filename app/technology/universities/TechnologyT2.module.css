@@ -5,10 +5,21 @@
 
 .container {
   min-height: 100vh;
-  background: #0a0a0a;
+  
   color: white;
   position: relative;
   margin-top: 150px;
+}
+
+
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+    background: url("/red.png");
+    background-size: cover;
 }
 
 .section4 {
@@ -635,6 +646,10 @@
     font-size: 1.75rem;
     margin-bottom: 2rem;
   }
+
+  .overlay{
+    display: none;
+}
 
   .productGrid {
     grid-template-columns: repeat(14, 280px);

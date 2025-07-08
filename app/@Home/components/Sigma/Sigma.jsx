@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Sigma.module.css'; 
+import Link from 'next/link';
 const Sigma = () => {
   return (
     <div className={styles.sigmaContainer}>
@@ -11,7 +12,7 @@ const Sigma = () => {
         </div>
         <div className={styles.sigmaTitle}>
         <div>Turning every classroom into a  <span>2-sigma classroom</span></div>
-         <a href="#" className={styles.ctaButton}>Know More</a></div>
+         <Link href="/contact" className={styles.ctaButton}>Know More</Link></div>
         
     </div>
   )

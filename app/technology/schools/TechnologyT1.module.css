@@ -1,10 +1,41 @@
 .section{
   width: 70%;
   margin: auto;
+  
 }
+
+
+.vid1{
+  position: absolute;
+  width: 32%;
+  top:120px;
+  left:-170px;
+  transform: rotatez(50deg) rotateY(180deg);
+  opacity: 0.7;
+  filter: grayscale(100);
+  border-radius: 30%;
+  z-index: 1;
+  
+}
+.vid2{
+  position: absolute;
+ width: 32%;
+  top:120px;
+  right:-170px;
+  transform: rotatez(-50deg) rotateY(0deg);
+  opacity: 0.7;
+  filter: grayscale(100);
+   border-radius: 30%;
+  border-radius: 30%;
+
+   z-index: 1;
+  
+}
+
 .section2{
   /* width: 75%; */
   margin-top: 10rem;
+  position: relative;;
 }
 .section3{
   /* width: 75%; */
@@ -15,6 +46,7 @@
 .section4 {
   margin-top: 10rem;
   padding: 0 2rem;
+  position: relative;
 }
 
 .impactSection {
@@ -76,6 +108,16 @@
 
 }
 
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+    background: url("/red.png");
+    background-size: cover;
+}
+
 .deviceImage {
   width: 100%;
   height: 300px;
@@ -85,6 +127,17 @@
   
   
 }
+
+.overlay2{
+  position: absolute;
+    top:2500px;
+    height: 800px;
+    width: 100%;
+    z-index: 1;
+    background: url("/Technology/overlay2.png");
+    background-size: cover;
+}
+
 .deviceImage2 {
   width: 100%;
   height: 300px;
@@ -404,7 +457,7 @@ top:-40px;
 }
 .container {
   min-height: 100vh;
-  background: #0a0a0a;
+
   color: white;
   position: relative;
   margin-top: 150px;
@@ -495,10 +548,12 @@ top:-40px;
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
-     
-   
+    padding: 1rem;  
   }
+
+.overlay{
+    display: none;
+}
   .section{
     width: 95%;
   }
