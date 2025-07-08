@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   const handleBackClick = () => {
     // Option 1: Go back to previous page in browser history
-    console.log("red");
+    
     router.back()
     
     // Option 2: Navigate to a specific route (uncomment if needed)

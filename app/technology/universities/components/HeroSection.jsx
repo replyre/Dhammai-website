@@ -1,13 +1,22 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import styles from '../TechnologyT2.module.css'
 
 const HeroSection = () => {
+  const router = useRouter()
+
+  const handleBackClick = () => {
+    router.back()
+  }
+
   return (
     <div className={`${styles.contentContainer} ${styles.section}`}>
       {/* Back Arrow */}
       <div className={styles.backButtonContainer}>
-        <button className={styles.backButton} >
+        <button className={styles.backButton} onClick={handleBackClick}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -42,4 +51,4 @@ const HeroSection = () => {
   )
 }
 
-export default HeroSection 
+export default HeroSection
