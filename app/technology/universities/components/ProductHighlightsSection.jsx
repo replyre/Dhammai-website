@@ -107,6 +107,8 @@ const ProductHighlightsSection = () => {
   };
 
   return (
+    <>
+     <div className={styles.overlay2}></div>
     <div className={`${styles.section4} `}>
       <h2 className={`${styles.productTitle} gradient-text`}>Problem & Fix Mini-Table</h2>
 
@@ -171,6 +173,7 @@ const ProductHighlightsSection = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

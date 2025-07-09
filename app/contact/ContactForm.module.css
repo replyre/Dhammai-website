@@ -115,3 +115,39 @@ background-clip: text;
 .submitButton:hover {
   background: #00e674;
 }
+
+.errorInput {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2;
+}
+
+.errorText {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.error {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.submitting {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

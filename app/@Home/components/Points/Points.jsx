@@ -17,7 +17,7 @@ const Points = () => {
             <div className={styles.box12}></div>
             <img className={styles.img2} src="/ball2.gif" />
             <div className={styles.text2}>
-                <h2 >Bridiging Gaps</h2>
+                <h2 >Bridging Gaps</h2>
                 <p>Adaptive agents<span> close knowledge, access, and support gaps in</span> real-time</p>
             </div>
         </div>

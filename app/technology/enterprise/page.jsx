@@ -7,12 +7,15 @@ import CTASection from './components/CTASection'
 
 const Technology = () => {
   return (
+    <>
+    <div className={styles.overlay}></div>
     <div className={styles.container}>
       <HeroSection />
       <ProductHighlightsSection />
       <ProblemAndFixMiniTable />
       <CTASection />
     </div>
+    </>
   )
 }
 

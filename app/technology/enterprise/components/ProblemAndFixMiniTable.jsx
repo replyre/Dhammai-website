@@ -28,6 +28,8 @@ const ProblemAndFixMiniTable = () => {
   return (
     
     <div className={`${styles.section4} `}>
+      <div className={styles.overlaylms}></div>
+       <div className={styles.overlay2}></div>
       <h2 className={`${styles.productTitle} gradient-text`}>Metrics & Targets</h2>
       <div className={styles.kpiTable}>
         {/* Table Header */}

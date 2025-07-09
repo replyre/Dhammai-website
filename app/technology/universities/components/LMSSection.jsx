@@ -27,6 +27,7 @@ const LMSSection = () => {
 
   return (
     <div className={styles.lmsSection}>
+      <div className={styles.overlaylms}></div>
       <div className={styles.lmsContainer}>
         <h2 className={styles.lmsTitle}>The LMS Without Limits</h2>
         

@@ -36,7 +36,7 @@ const HeroSection = () => {
         {/* Classroom Image */}
         <div className={styles.imageContainer}>
           <Image
-            src="/Technologyt2home.png"
+            src="/tech2home.png"
             alt="Modern classroom with wooden desks and warm lighting"
             width={800}
             height={400}

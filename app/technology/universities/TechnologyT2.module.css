@@ -17,7 +17,7 @@
     top:0px;
     height: 400px;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
     background: url("/red.png");
     background-size: cover;
 }
@@ -27,12 +27,21 @@
   /* margin-top: 10rem; */
   padding: 0 2rem;
 }
-
+.overlaylms{
+    position: absolute;
+    top:-400px;
+    height: 1000px;
+    width: 100%;
+    z-index: 1;
+    background: url("/Technology/overlaylms.png");
+    background-size: cover;
+  
+}
 
 /* Dashboard Showcase Section */
 .dashboardSection {
   padding: 4rem 2rem;
-  background: #0a0a0a;
+ 
 }
 
 .dashboardContainer {
@@ -112,7 +121,7 @@
 /* LMS Section */
 .lmsSection {
   padding: 6rem 2rem;
-  background: #0a0a0a;
+background-color: transparent !important;
   position: relative;
 }
 
@@ -192,6 +201,15 @@
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
   z-index: 100 !important;
+}
+.overlay2{
+  position: absolute;
+    top:2000px;
+    height: 800px;
+    width: 100%;
+    z-index: 1;
+    background: url("/Technology/overlay2.png");
+    background-size: cover;
 }
 
 .cardsExpanded .lmsCard {
@@ -330,17 +348,18 @@
 }
 
 .ctaSection {
-  padding: 4rem 8rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+  padding: 4rem 4rem;
+  
 }
 
 .ctaContainer {
-  width: 83%;
+  width: 90%;
   margin: 0 auto;
+  
 }
 
 .ctaTitle {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 1.5rem;
@@ -348,7 +367,7 @@
 }
 
 .ctaSubtitle {
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   font-weight: 400;
   color: #a0a0a0;
   margin-bottom: 3rem;
@@ -370,13 +389,13 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+  box-shadow:inset 0 4px 16px rgba(106, 105, 105, 0.614);
 }
 
 .ctaButton:hover {
   background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 6px 20px rgba(144, 143, 143, 0.57);
 }
 
 .ctaButton:active {
@@ -532,6 +551,10 @@
   cursor: pointer;
   border-radius: 50%;
   transition: background-color 0.3s ease;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .backButton:hover {
@@ -874,6 +897,7 @@
 
   .lmsSection {
     padding: 3rem 0.5rem;
+    position: relative;
   }
 
   .lmsTitle {

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../TechnologyT1.module.css'
+import Link from 'next/link';
 
 const CTASection = () => {
   return (
@@ -9,9 +10,9 @@ const CTASection = () => {
           Build the Classroom of tomorrow
         </h2>
         
-        <button className={styles.ctaButton}>
+        <Link href={"/contact"} className={styles.ctaButton}>
           Book a Demo
-        </button>
+        </Link>
       </div>
     </div>
   )

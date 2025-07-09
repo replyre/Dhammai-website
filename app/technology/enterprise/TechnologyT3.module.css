@@ -15,16 +15,27 @@
 .section4 {
   margin-top: 10rem;
   padding: 0 2rem;
+  position: relative;;
 }
 
 .container {
   min-height: 100vh;
-  background: #0a0a0a;
+  
   color: white;
   position: relative;
   margin-top: 150px;
 }
-
+.overlaylms{
+    position: absolute;
+    top:-300px;
+    height: 600px;
+    right: -150px;
+    width: 50%;
+    z-index: 1;
+    background: url("/Technology/overlaylms.png");
+    background-size: contain;
+  
+}
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -36,7 +47,16 @@
 .backButtonContainer {
   width: 100%;
 }
-
+.overlay2{
+  position: absolute;
+    top:100px;
+    height: 800px;
+    width: 100%;
+    z-index: 10;
+    background: url("/Technology/overlay2.png");
+    background-size: cover;
+   
+}
 .backButton {
   background: transparent;
   border: none;
@@ -44,6 +64,10 @@
   cursor: pointer;
   border-radius: 50%;
   transition: background-color 0.3s ease;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .backButton:hover {
@@ -152,7 +176,16 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 400px;
+    width: 100%;
+    z-index: 0;
+    background: url("/red.png");
+    background-size: cover;
+   
+}
 .headerCell:last-child {
   border-right: none;
 }
@@ -204,8 +237,8 @@
 
 /* CTA Section */
 .ctaSection {
-  padding: 4rem 8rem;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+  padding: 4rem 4rem;
+  
 }
 
 .ctaContainer {
