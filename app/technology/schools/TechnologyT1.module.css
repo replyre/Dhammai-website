@@ -370,9 +370,7 @@ top:-40px;
   transform: translateY(-5px);
 }
 
-.centerCard {
-  /* transform: translateY(-2rem); */
-}
+
 
 .centerCard .cardImageContainer {
   border-radius: 0 0 16px 16px;
