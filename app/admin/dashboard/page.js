@@ -27,18 +27,15 @@ const AdminDashboard = () => {
 
   // Check authentication on mount
   useEffect(() => {
-    const token = localStorage.getItem('admin-token');
-    const user = localStorage.getItem('admin-user');
-    
-    if (!token || !user) {
+    const isLoggedIn = localStorage.getItem('admin-logged-in');
+    if (isLoggedIn !== 'true') {
       router.push('/admin');
       return;
     }
-    
     setLoading(false);
   }, [router]);
 
-  // Memoize fetchContacts to prevent infinite loops
+  // Fetch contacts function
   const fetchContacts = useCallback(async () => {
     try {
       setLoading(true);
@@ -67,45 +64,29 @@ const AdminDashboard = () => {
     }
   }, [filters]);
 
-  // Fetch contacts when filters change (but only after auth check)
+  // Fetch contacts when filters change
   useEffect(() => {
-    const token = localStorage.getItem('admin-token');
-    if (token && !loading) {
+    const isLoggedIn = localStorage.getItem('admin-logged-in');
+    if (isLoggedIn === 'true') {
       fetchContacts();
     }
   }, [filters, fetchContacts]);
 
-  // Initial data fetch after authentication
-  useEffect(() => {
-    const token = localStorage.getItem('admin-token');
-    if (token) {
-      fetchContacts();
-    }
-  }, []);
-
-  const handleLogout = async () => {
-    try {
-      // Clear localStorage
-      localStorage.removeItem('admin-token');
-      localStorage.removeItem('admin-user');
-      
-      // Call logout API (optional)
-      await fetch('/api/admin/auth', { method: 'DELETE' });
-      
-      // Redirect to login
-      router.push('/admin');
-    } catch (error) {
-      console.error('Logout failed:', error);
-      // Still redirect even if API call fails
-      router.push('/admin');
-    }
+  const handleLogout = () => {
+    // Clear login state
+    localStorage.removeItem('admin-logged-in');
+    localStorage.removeItem('admin-user');
+    localStorage.removeItem('admin-login-time');
+    
+    // Redirect to login
+    router.push('/admin');
   };
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({
       ...prev,
       [key]: value,
-      page: key === 'page' ? value : 1 // Reset to page 1 unless changing page
+      page: key === 'page' ? value : 1
     }));
   };
 
@@ -122,7 +103,6 @@ const AdminDashboard = () => {
       const result = await response.json();
 
       if (result.success) {
-        // Update local state
         setContacts(prev => 
           prev.map(contact => 
             contact._id === contactId 
@@ -130,7 +110,6 @@ const AdminDashboard = () => {
               : contact
           )
         );
-        // Refresh to update stats
         fetchContacts();
       } else {
         alert('Failed to update status: ' + result.message);
@@ -154,9 +133,7 @@ const AdminDashboard = () => {
       const result = await response.json();
 
       if (result.success) {
-        // Remove from local state
         setContacts(prev => prev.filter(contact => contact._id !== contactId));
-        // Refresh to update stats and pagination
         fetchContacts();
       } else {
         alert('Failed to delete contact: ' + result.message);
@@ -189,9 +166,10 @@ const AdminDashboard = () => {
   };
 
   const totalContacts = Object.values(stats).reduce((sum, count) => sum + (count || 0), 0);
+  const currentUser = localStorage.getItem('admin-user') || 'Admin';
 
-  // Show loading only for initial auth check
-  if (loading && !localStorage.getItem('admin-token')) {
+  // Show loading during auth check
+  if (loading && !contacts.length) {
     return (
       <div className={styles.dashboardContainer}>
         <div className={styles.loadingSpinner}>
@@ -206,13 +184,19 @@ const AdminDashboard = () => {
       <div className={styles.dashboardContent}>
         {/* Header */}
         <div className={styles.dashboardHeader}>
-          <h1 className={styles.dashboardTitle}>Admin Dashboard</h1>
+          <div>
+            <h1 className={styles.dashboardTitle}>Admin Dashboard</h1>
+            <p style={{color: '#cccccc', margin: '5px 0 0 0', fontSize: '14px'}}>
+              Welcome back, {currentUser}
+            </p>
+          </div>
           <div className={styles.headerActions}>
             <button 
               onClick={fetchContacts}
               className={styles.refreshButton}
+              disabled={loading}
             >
-              Refresh
+              {loading ? 'Loading...' : 'Refresh'}
             </button>
             <button 
               onClick={handleLogout}
@@ -345,12 +329,12 @@ const AdminDashboard = () => {
                       <tr key={contact._id}>
                         <td>
                           <strong>{contact.fullName}</strong>
-                          {contact.phoneNumber && <div style={{fontSize: '12px', color: '#666'}}>{contact.phoneNumber}</div>}
+                          {contact.phoneNumber && <div style={{fontSize: '12px', color: '#cccccc'}}>{contact.phoneNumber}</div>}
                         </td>
                         <td>{contact.email}</td>
                         <td>
                           <div>{contact.organizationName}</div>
-                          <div style={{fontSize: '12px', color: '#666'}}>{contact.organizationType}</div>
+                          <div style={{fontSize: '12px', color: '#cccccc'}}>{contact.organizationType}</div>
                         </td>
                         <td>
                           <div style={{maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis'}}>

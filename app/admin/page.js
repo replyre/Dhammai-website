@@ -3,6 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./Admin.module.css";
 
+// Simple hardcoded credentials
+const ADMIN_CREDENTIALS = {
+  username: 'DhammAdmin',
+  password: 'Admin@123'
+};
+
 const AdminLogin = () => {
   const [loginData, setLoginData] = useState({
     username: "",
@@ -15,11 +21,8 @@ const AdminLogin = () => {
 
   // Check if already logged in
   useEffect(() => {
-    const token = localStorage.getItem('admin-token');
-    const user = localStorage.getItem('admin-user');
-    
-    if (token && user) {
-      // Already logged in, redirect to dashboard
+    const isLoggedIn = localStorage.getItem('admin-logged-in');
+    if (isLoggedIn === 'true') {
       router.push('/admin/dashboard');
     }
   }, [router]);
@@ -31,7 +34,6 @@ const AdminLogin = () => {
       [name]: value
     }));
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -66,38 +68,29 @@ const AdminLogin = () => {
     setIsLogging(true);
     setLoginMessage("");
 
-    try {
-      const response = await fetch('/api/admin/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        // Store token and user info in localStorage
-        localStorage.setItem('admin-token', result.token);
-        localStorage.setItem('admin-user', JSON.stringify(result.user));
+    // Simulate API call delay
+    setTimeout(() => {
+      // Check credentials
+      if (loginData.username === ADMIN_CREDENTIALS.username && 
+          loginData.password === ADMIN_CREDENTIALS.password) {
+        
+        // Store login state
+        localStorage.setItem('admin-logged-in', 'true');
+        localStorage.setItem('admin-user', loginData.username);
+        localStorage.setItem('admin-login-time', Date.now().toString());
         
         setLoginMessage("Login successful! Redirecting...");
         
-        // Redirect to admin dashboard
         setTimeout(() => {
           router.push('/admin/dashboard');
         }, 1000);
       } else {
-        setLoginMessage(result.message || "Login failed");
-        setErrors({ general: result.message || "Invalid credentials" });
+        setLoginMessage("Invalid credentials. Please try again.");
+        setErrors({ general: "Invalid username or password" });
       }
-    } catch (error) {
-      setLoginMessage("Login failed. Please try again.");
-      console.error('Login error:', error);
-    } finally {
+      
       setIsLogging(false);
-    }
+    }, 800);
   };
 
   return (
