@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import styles from "./ContactForm.module.css";
 
-
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -111,7 +110,6 @@ const ContactForm = () => {
     setSubmitMessage("");
 
     try {
-      // TODO: Replace with your actual API endpoint
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -120,8 +118,10 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        setSubmitMessage("Thank you! Your message has been sent successfully.");
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitMessage(result.message);
         // Reset form
         setFormData({
           fullName: "",
@@ -136,11 +136,16 @@ const ContactForm = () => {
           meetingTime: "",
           agreedToSendInfo: false,
         });
+        setErrors({});
       } else {
-        throw new Error('Failed to send message');
+        // Handle validation errors from server
+        if (result.errors) {
+          setErrors(result.errors);
+        }
+        throw new Error(result.message || 'Failed to send message');
       }
     } catch (error) {
-      setSubmitMessage("Sorry, there was an error sending your message. Please try again.");
+      setSubmitMessage(`Error: ${error.message}`);
       console.error('Error:', error);
     } finally {
       setIsSubmitting(false);
@@ -170,7 +175,7 @@ const ContactForm = () => {
       </p>
 
       {submitMessage && (
-        <div className={`${styles.message} ${submitMessage.includes('error') ? styles.error : styles.success}`}>
+        <div className={`${styles.message} ${submitMessage.includes('Error') ? styles.error : styles.success}`}>
           {submitMessage}
         </div>
       )}
