@@ -46,7 +46,15 @@ const positions = [
   }
 ];
 
-
+export const metadata = {
+  title: "Careers at DHAMM.AI | Join the Future of AI in Education",
+  description: "Join DHAMM.AI's mission to transform education through AI. Explore career opportunities in EdTech, AI research, engineering, and product development.",
+  openGraph: {
+    title: "Careers at DHAMM.AI | Join the Future of AI in Education",
+    description: "Build the future of AI in education with our team",
+    url: "https://dhamm.ai/careers"
+  }
+};
 const CareerSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 

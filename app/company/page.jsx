@@ -4,6 +4,15 @@ import Timeline from './component/Timeline'
 import Timeline2 from './component/Timeline2'
 import Link from 'next/link'
 
+export const metadata = {
+  title: "About DHAMM.AI | Our Mission for Inclusive AI Education",
+  description: "Learn about DHAMM.AI's mission to democratize AI in education. We build inclusive, culturally relevant learning platforms that respect privacy and empower every learner worldwide.",
+  openGraph: {
+    title: "About DHAMM.AI | Our Mission for Inclusive AI Education",
+    description: "Building inclusive AI education solutions that respect privacy",
+    url: "https://dhamm.ai/company"
+  }
+};
 const Company = () => {
   return (
     <div className={styles.contianer}  >

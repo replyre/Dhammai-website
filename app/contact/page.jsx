@@ -2,6 +2,16 @@
 import React, { useState } from "react";
 import styles from "./ContactForm.module.css";
 
+ const metadata = {
+  title: "Contact DHAMM.AI | Request Demo & EdTech Support",
+  description: "Get in touch with DHAMM.AI for product demos, partnership opportunities, technical support, or AI education consultations.",
+  openGraph: {
+    title: "Contact DHAMM.AI | Request Demo & Support",
+    description: "Get in touch for demos and partnerships",
+    url: "https://dhamm.ai/contact"
+  }
+};
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",

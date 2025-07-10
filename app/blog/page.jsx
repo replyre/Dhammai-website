@@ -4,7 +4,15 @@ import { FaSearch } from "react-icons/fa";
 import { blogPosts } from "../data/blog";
 import Link from "next/link";
 
-
+export const metadata = {
+  title: "DHAMM.AI Blog | AI Education Insights & Research Updates",
+  description: "Stay updated with the latest in AI education, research insights, product announcements, and thought leadership from DHAMM.AI.",
+  openGraph: {
+    title: "DHAMM.AI Blog | AI Education Insights & Research",
+    description: "Latest insights in AI education and research updates",
+    url: "https://dhamm.ai/blog"
+  }
+};
 
 const BlogSection = () => {
   const featured = blogPosts[0];
