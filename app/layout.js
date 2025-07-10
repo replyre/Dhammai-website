@@ -180,7 +180,7 @@
             }}
           />
           
-          {/* PWA Manifest */}
+          
          
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
