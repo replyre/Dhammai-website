@@ -26,14 +26,19 @@ const AdminDashboard = () => {
   const router = useRouter();
 
   // Check authentication on mount
-  useEffect(() => {
+ const [currentUser, setCurrentUser] = useState('Admin');
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
     const isLoggedIn = localStorage.getItem('admin-logged-in');
     if (isLoggedIn !== 'true') {
       router.push('/admin');
       return;
     }
+    setCurrentUser(localStorage.getItem('admin-user') || 'Admin');
     setLoading(false);
-  }, [router]);
+  }
+}, [router]);
 
   // Fetch contacts function
   const fetchContacts = useCallback(async () => {
@@ -166,7 +171,7 @@ const AdminDashboard = () => {
   };
 
   const totalContacts = Object.values(stats).reduce((sum, count) => sum + (count || 0), 0);
-  const currentUser = localStorage.getItem('admin-user') || 'Admin';
+  
 
   // Show loading during auth check
   if (loading && !contacts.length) {
