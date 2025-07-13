@@ -1,12 +1,13 @@
-// app/admin/dashboard/page.js (UPDATED)
+// app/admin/applications/page.js
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "../Admin.module.css";
 
-const AdminDashboard = () => {
-  const [contacts, setContacts] = useState([]);
+const JobApplicationsAdmin = () => {
+  const [applications, setApplications] = useState([]);
+  const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({});
   const [pagination, setPagination] = useState({
@@ -21,15 +22,14 @@ const AdminDashboard = () => {
     page: 1,
     limit: 10,
     status: "all",
-    organizationType: "all",
+    jobId: "all",
     search: "",
   });
 
   const router = useRouter();
-
-  // Check authentication on mount
   const [currentUser, setCurrentUser] = useState("Admin");
 
+  // Check authentication on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isLoggedIn = localStorage.getItem("admin-logged-in");
@@ -38,12 +38,24 @@ const AdminDashboard = () => {
         return;
       }
       setCurrentUser(localStorage.getItem("admin-user") || "Admin");
-      setLoading(false);
     }
   }, [router]);
 
-  // Fetch contacts function
-  const fetchContacts = useCallback(async () => {
+  // Fetch jobs for filter dropdown
+  const fetchJobs = useCallback(async () => {
+    try {
+      const response = await fetch("/api/jobs");
+      const result = await response.json();
+      if (result.success) {
+        setJobs(result.data);
+      }
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    }
+  }, []);
+
+  // Fetch applications function
+  const fetchApplications = useCallback(async () => {
     try {
       setLoading(true);
       const queryParams = new URLSearchParams();
@@ -54,38 +66,36 @@ const AdminDashboard = () => {
         }
       });
 
-      const response = await fetch(`/api/admin/contacts?${queryParams}`);
+      const response = await fetch(`/api/jobs/applications?${queryParams}`);
       const result = await response.json();
 
       if (result.success) {
-        setContacts(result.data);
+        setApplications(result.data);
         setPagination(result.pagination);
         setStats(result.stats || {});
       } else {
-        console.error("Failed to fetch contacts:", result.message);
+        console.error("Failed to fetch applications:", result.message);
       }
     } catch (error) {
-      console.error("Error fetching contacts:", error);
+      console.error("Error fetching applications:", error);
     } finally {
       setLoading(false);
     }
   }, [filters]);
 
-  // Fetch contacts when filters change
+  // Fetch data when filters change
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("admin-logged-in");
     if (isLoggedIn === "true") {
-      fetchContacts();
+      fetchJobs();
+      fetchApplications();
     }
-  }, [filters, fetchContacts]);
+  }, [filters, fetchJobs, fetchApplications]);
 
   const handleLogout = () => {
-    // Clear login state
     localStorage.removeItem("admin-logged-in");
     localStorage.removeItem("admin-user");
     localStorage.removeItem("admin-login-time");
-
-    // Redirect to login
     router.push("/admin");
   };
 
@@ -97,27 +107,28 @@ const AdminDashboard = () => {
     }));
   };
 
-  const handleStatusUpdate = async (contactId, newStatus) => {
+  const handleStatusUpdate = async (applicationId, newStatus) => {
     try {
-      const response = await fetch(`/api/admin/contacts?id=${contactId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ status: newStatus }),
-      });
+      const response = await fetch(
+        `/api/jobs/applications?id=${applicationId}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ status: newStatus }),
+        }
+      );
 
       const result = await response.json();
 
       if (result.success) {
-        setContacts((prev) =>
-          prev.map((contact) =>
-            contact._id === contactId
-              ? { ...contact, status: newStatus }
-              : contact
+        setApplications((prev) =>
+          prev.map((app) =>
+            app._id === applicationId ? { ...app, status: newStatus } : app
           )
         );
-        fetchContacts();
+        fetchApplications();
       } else {
         alert("Failed to update status: " + result.message);
       }
@@ -127,29 +138,32 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleDelete = async (contactId) => {
-    if (!confirm("Are you sure you want to delete this contact?")) {
+  const handleDelete = async (applicationId) => {
+    if (!confirm("Are you sure you want to delete this application?")) {
       return;
     }
 
     try {
-      const response = await fetch(`/api/admin/contacts?id=${contactId}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `/api/jobs/applications?id=${applicationId}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       const result = await response.json();
 
       if (result.success) {
-        setContacts((prev) =>
-          prev.filter((contact) => contact._id !== contactId)
+        setApplications((prev) =>
+          prev.filter((app) => app._id !== applicationId)
         );
-        fetchContacts();
+        fetchApplications();
       } else {
-        alert("Failed to delete contact: " + result.message);
+        alert("Failed to delete application: " + result.message);
       }
     } catch (error) {
-      console.error("Error deleting contact:", error);
-      alert("Failed to delete contact");
+      console.error("Error deleting application:", error);
+      alert("Failed to delete application");
     }
   };
 
@@ -166,24 +180,25 @@ const AdminDashboard = () => {
   const getStatusClass = (status) => {
     const statusMap = {
       new: styles.statusNew,
-      contacted: styles.statusContacted,
-      "in-progress": styles.statusInProgress,
-      completed: styles.statusCompleted,
-      closed: styles.statusClosed,
+      reviewed: styles.statusContacted,
+      "interview-scheduled": styles.statusInProgress,
+      interviewing: styles.statusInProgress,
+      selected: styles.statusCompleted,
+      rejected: styles.statusClosed,
+      withdrawn: styles.statusClosed,
     };
     return `${styles.statusBadge} ${statusMap[status] || styles.statusNew}`;
   };
 
-  const totalContacts = Object.values(stats).reduce(
+  const totalApplications = Object.values(stats).reduce(
     (sum, count) => sum + (count || 0),
     0
   );
 
-  // Show loading during auth check
-  if (loading && !contacts.length) {
+  if (loading && !applications.length) {
     return (
       <div className={styles.dashboardContainer}>
-        <div className={styles.loadingSpinner}>Loading dashboard...</div>
+        <div className={styles.loadingSpinner}>Loading applications...</div>
       </div>
     );
   }
@@ -194,9 +209,7 @@ const AdminDashboard = () => {
         {/* Header */}
         <div className={styles.dashboardHeader}>
           <div>
-            <h1 className={styles.dashboardTitle}>
-              Admin Dashboard - Contacts
-            </h1>
+            <h1 className={styles.dashboardTitle}>Job Applications</h1>
             <p
               style={{
                 color: "#cccccc",
@@ -204,15 +217,15 @@ const AdminDashboard = () => {
                 fontSize: "14px",
               }}
             >
-              Welcome back, {currentUser}
+              Manage job applications and candidates
             </p>
           </div>
           <div className={styles.headerActions}>
-            <Link href="/admin/applications" className={styles.refreshButton}>
-              View Job Applications
+            <Link href="/admin/dashboard" className={styles.refreshButton}>
+              Back to Contacts
             </Link>
             <button
-              onClick={fetchContacts}
+              onClick={fetchApplications}
               className={styles.refreshButton}
               disabled={loading}
             >
@@ -224,51 +237,33 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Quick Navigation Cards */}
-        <div className={styles.statsContainer} style={{ marginBottom: "2rem" }}>
-          <Link href="/admin/applications" style={{ textDecoration: "none" }}>
-            <div
-              className={styles.statCard}
-              style={{
-                cursor: "pointer",
-                backgroundColor: "#1a2332",
-                border: "1px solid #2a3441",
-              }}
-            >
-              <div className={styles.statNumber}>📋</div>
-              <div className={styles.statLabel}>Job Applications</div>
-            </div>
-          </Link>
-          <div
-            className={styles.statCard}
-            style={{ backgroundColor: "#1a321a", border: "1px solid #2a412a" }}
-          >
-            <div className={styles.statNumber}>📞</div>
-            <div className={styles.statLabel}>Contact Forms (Current)</div>
-          </div>
-        </div>
-
         {/* Statistics */}
         <div className={styles.statsContainer}>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>{totalContacts}</div>
-            <div className={styles.statLabel}>Total Contacts</div>
+            <div className={styles.statNumber}>{totalApplications}</div>
+            <div className={styles.statLabel}>Total Applications</div>
           </div>
           <div className={styles.statCard}>
             <div className={styles.statNumber}>{stats.new || 0}</div>
             <div className={styles.statLabel}>New</div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>{stats.contacted || 0}</div>
-            <div className={styles.statLabel}>Contacted</div>
+            <div className={styles.statNumber}>{stats.reviewed || 0}</div>
+            <div className={styles.statLabel}>Reviewed</div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>{stats["in-progress"] || 0}</div>
-            <div className={styles.statLabel}>In Progress</div>
+            <div className={styles.statNumber}>
+              {stats["interview-scheduled"] || 0}
+            </div>
+            <div className={styles.statLabel}>Interview Scheduled</div>
           </div>
           <div className={styles.statCard}>
-            <div className={styles.statNumber}>{stats.completed || 0}</div>
-            <div className={styles.statLabel}>Completed</div>
+            <div className={styles.statNumber}>{stats.selected || 0}</div>
+            <div className={styles.statLabel}>Selected</div>
+          </div>
+          <div className={styles.statCard}>
+            <div className={styles.statNumber}>{stats.rejected || 0}</div>
+            <div className={styles.statLabel}>Rejected</div>
           </div>
         </div>
 
@@ -280,7 +275,7 @@ const AdminDashboard = () => {
               <input
                 type="text"
                 className={styles.filterInput}
-                placeholder="Search by name, email, organization..."
+                placeholder="Search by name, email, skills..."
                 value={filters.search}
                 onChange={(e) => handleFilterChange("search", e.target.value)}
               />
@@ -295,31 +290,28 @@ const AdminDashboard = () => {
               >
                 <option value="all">All Status</option>
                 <option value="new">New</option>
-                <option value="contacted">Contacted</option>
-                <option value="in-progress">In Progress</option>
-                <option value="completed">Completed</option>
-                <option value="closed">Closed</option>
+                <option value="reviewed">Reviewed</option>
+                <option value="interview-scheduled">Interview Scheduled</option>
+                <option value="interviewing">Interviewing</option>
+                <option value="selected">Selected</option>
+                <option value="rejected">Rejected</option>
+                <option value="withdrawn">Withdrawn</option>
               </select>
             </div>
 
             <div className={styles.filterGroup}>
-              <label className={styles.filterLabel}>Organization Type</label>
+              <label className={styles.filterLabel}>Job Position</label>
               <select
                 className={styles.filterSelect}
-                value={filters.organizationType}
-                onChange={(e) =>
-                  handleFilterChange("organizationType", e.target.value)
-                }
+                value={filters.jobId}
+                onChange={(e) => handleFilterChange("jobId", e.target.value)}
               >
-                <option value="all">All Types</option>
-                <option value="Educational Institution">
-                  Educational Institution
-                </option>
-                <option value="Corporate">Corporate</option>
-                <option value="Government">Government</option>
-                <option value="Non-Profit">Non-Profit</option>
-                <option value="Startup">Startup</option>
-                <option value="Other">Other</option>
+                <option value="all">All Jobs</option>
+                {jobs.map((job) => (
+                  <option key={job._id} value={job._id}>
+                    {job.title} - {job.department}
+                  </option>
+                ))}
               </select>
             </div>
 
@@ -341,18 +333,18 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Contacts Table */}
+        {/* Applications Table */}
         <div className={styles.contactsContainer}>
           <div className={styles.contactsHeader}>
-            Contact Submissions ({pagination.total} total)
+            Job Applications ({pagination.total} total)
           </div>
 
           {loading ? (
-            <div className={styles.loadingSpinner}>Loading contacts...</div>
-          ) : contacts.length === 0 ? (
+            <div className={styles.loadingSpinner}>Loading applications...</div>
+          ) : applications.length === 0 ? (
             <div className={styles.emptyState}>
-              <h3>No contacts found</h3>
-              <p>No contacts match your current filters.</p>
+              <h3>No applications found</h3>
+              <p>No applications match your current filters.</p>
             </div>
           ) : (
             <>
@@ -360,50 +352,64 @@ const AdminDashboard = () => {
                 <table className={styles.contactsTable}>
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Organization</th>
-                      <th>Subject</th>
+                      <th>Candidate</th>
+                      <th>Job Position</th>
+                      <th>Experience</th>
+                      <th>Current Role</th>
+                      <th>Skills</th>
                       <th>Status</th>
-                      <th>Date</th>
+                      <th>Applied Date</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {contacts.map((contact) => (
-                      <tr key={contact._id}>
+                    {applications.map((application) => (
+                      <tr key={application._id}>
                         <td>
-                          <strong>{contact.fullName}</strong>
-                          {contact.phoneNumber && (
+                          <strong>{application.fullName}</strong>
+                          <div style={{ fontSize: "12px", color: "#cccccc" }}>
+                            {application.email}
+                          </div>
+                          {application.phoneNumber && (
                             <div style={{ fontSize: "12px", color: "#cccccc" }}>
-                              {contact.phoneNumber}
+                              {application.phoneNumber}
                             </div>
                           )}
                         </td>
-                        <td>{contact.email}</td>
                         <td>
-                          <div>{contact.organizationName}</div>
+                          <div>
+                            <strong>{application.jobId?.title}</strong>
+                          </div>
                           <div style={{ fontSize: "12px", color: "#cccccc" }}>
-                            {contact.organizationType}
+                            {application.jobId?.department} •{" "}
+                            {application.jobId?.location}
+                          </div>
+                        </td>
+                        <td>{application.experience}</td>
+                        <td>
+                          <div>
+                            {application.currentRole || "Not specified"}
+                          </div>
+                          <div style={{ fontSize: "12px", color: "#cccccc" }}>
+                            {application.currentCompany || ""}
                           </div>
                         </td>
                         <td>
-                          <div
-                            style={{
-                              maxWidth: "200px",
-                              overflow: "hidden",
-                              textOverflow: "ellipsis",
-                            }}
-                          >
-                            {contact.subject}
+                          <div style={{ maxWidth: "150px", fontSize: "12px" }}>
+                            {application.skills?.length
+                              ? application.skills.join(", ")
+                              : "Not specified"}
                           </div>
                         </td>
                         <td>
                           <select
-                            className={getStatusClass(contact.status)}
-                            value={contact.status}
+                            className={getStatusClass(application.status)}
+                            value={application.status}
                             onChange={(e) =>
-                              handleStatusUpdate(contact._id, e.target.value)
+                              handleStatusUpdate(
+                                application._id,
+                                e.target.value
+                              )
                             }
                             style={{
                               border: "none",
@@ -413,38 +419,56 @@ const AdminDashboard = () => {
                             }}
                           >
                             <option value="new">NEW</option>
-                            <option value="contacted">CONTACTED</option>
-                            <option value="in-progress">IN PROGRESS</option>
-                            <option value="completed">COMPLETED</option>
-                            <option value="closed">CLOSED</option>
+                            <option value="reviewed">REVIEWED</option>
+                            <option value="interview-scheduled">
+                              INTERVIEW SCHEDULED
+                            </option>
+                            <option value="interviewing">INTERVIEWING</option>
+                            <option value="selected">SELECTED</option>
+                            <option value="rejected">REJECTED</option>
+                            <option value="withdrawn">WITHDRAWN</option>
                           </select>
                         </td>
-                        <td>{formatDate(contact.createdAt)}</td>
+                        <td>{formatDate(application.createdAt)}</td>
                         <td>
                           <div className={styles.actionButtons}>
                             <button
                               className={`${styles.actionButton} ${styles.editButton}`}
-                              onClick={() =>
-                                alert(
-                                  `Contact Details:\n\nMessage: ${
-                                    contact.message
-                                  }\n\nMeeting Date: ${
-                                    contact.meetingDate || "Not specified"
-                                  }\nMeeting Time: ${
-                                    contact.meetingTime || "Not specified"
-                                  }\nStudent Count: ${
-                                    contact.studentCount || "Not specified"
-                                  }`
-                                )
-                              }
+                              onClick={() => {
+                                const details = [
+                                  `Cover Letter: ${
+                                    application.coverLetter || "Not provided"
+                                  }`,
+                                  `Current Location: ${
+                                    application.currentLocation ||
+                                    "Not specified"
+                                  }`,
+                                  `Notice Period: ${
+                                    application.noticePeriod || "Not specified"
+                                  }`,
+                                  `Resume: ${
+                                    application.resumeUrl || "Not provided"
+                                  }`,
+                                  `Portfolio: ${
+                                    application.portfolioUrl || "Not provided"
+                                  }`,
+                                  `LinkedIn: ${
+                                    application.linkedinUrl || "Not provided"
+                                  }`,
+                                  `GitHub: ${
+                                    application.githubUrl || "Not provided"
+                                  }`,
+                                ].join("\n\n");
+                                alert(`Application Details:\n\n${details}`);
+                              }}
                               title="View Details"
                             >
                               View
                             </button>
                             <button
                               className={`${styles.actionButton} ${styles.deleteButton}`}
-                              onClick={() => handleDelete(contact._id)}
-                              title="Delete Contact"
+                              onClick={() => handleDelete(application._id)}
+                              title="Delete Application"
                             >
                               Delete
                             </button>
@@ -504,4 +528,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default JobApplicationsAdmin;
