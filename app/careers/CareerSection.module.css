@@ -1,3 +1,5 @@
+/* Enhanced CareerSection.module.css */
+
 .container {
   background-color: #000;
   color: #fff;
@@ -6,32 +8,34 @@
   margin: auto;
   padding-top: 150px;
   margin-bottom: 100px;
-
-
 }
-.leftTopShade{
+
+.leftTopShade {
   position: absolute;
-  top:0px;
+  top: 0px;
   left: 0px;
 }
-.rightTopShade{
+
+.rightTopShade {
   position: absolute;
-  top:0px;
+  top: 0px;
   right: 0px;
   transform: rotateY(180deg);
 }
-.rightmiddleShade{
+
+.rightmiddleShade {
   position: absolute;
-  bottom:0;
+  bottom: 0;
   right: 0px;
-  
 }
-.leftendShade{
+
+.leftendShade {
   position: absolute;
-  bottom:-100%;
+  bottom: -100%;
   left: 0px;
   transform: rotateY(180deg);
 }
+
 .exploreButton {
   background: #fff;
   color: #000;
@@ -46,8 +50,7 @@
   justify-content: center;
 }
 
-
-.textArea{
+.textArea {
   display: flex;
   justify-content: space-between;
 }
@@ -59,10 +62,10 @@
   vertical-align: middle;
   background-clip: text;
   color: transparent;
-  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background: linear-gradient(83deg, #fff 27.1%, #525252 72.9%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .textArea h1 span {
@@ -75,8 +78,6 @@ background-clip: text;
   width: 32%;
   line-height: 1.4;
   max-width: 500px;
-  
-  
 }
 
 .imagePlaceholder {
@@ -92,9 +93,54 @@ background-clip: text;
   font-size: 1rem;
   border-radius: 10px;
 }
-.imagePlaceholder img{
+
+.imagePlaceholder img {
   border-radius: 10px;
 }
+
+/* Statistics Section */
+.statsContainer {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.statsContainer h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.statItem {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Job Accordion */
 .accordion {
   display: flex;
   flex-direction: column;
@@ -112,29 +158,174 @@ background-clip: text;
   color: #fff;
   font-size: 2rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   cursor: pointer;
   width: 100%;
   text-align: left;
 }
 
-.accordionContent {
-  color: #ccc;
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  line-height: 2;
-   margin-left: 50px;
-}
-.accordionContent ul {
-  list-style-type: none;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
+.jobHeader {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.accordionContent li {
-  margin-bottom: 0.5rem;
+.jobHeaderTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.jobTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.jobIndicators {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.applicantCount {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.deadlineWarning {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.deadlinePassed {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+}
+
+.jobMeta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.jobDepartment,
+.jobLocation,
+.jobType {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accordionContent {
   color: #ccc;
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-left: 50px;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.jobDetails {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.jobSection {
+  margin-bottom: 2rem;
+}
+
+.jobSection h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.jobSection p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.jobSection ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.jobSection li {
+  margin-bottom: 0.8rem;
+  color: #ccc;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.jobSection li::before {
+  content: "•";
+  color: #4ade80;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.jobInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.jobInfoItem {
+  color: #ccc;
+}
+
+.jobInfoItem strong {
+  color: #fff;
+}
+
+.jobFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.jobMetaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.applicationActions {
+  display: flex;
+  gap: 1rem;
 }
 
 .applyButton {
@@ -148,14 +339,89 @@ background-clip: text;
   cursor: pointer;
   border: 2px solid white;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-left: 20px;
 }
 
 .applyButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(160, 172, 165, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
+.applyButtonDisabled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: 2px solid #ef4444;
+  border-radius: 30px;
+  cursor: not-allowed;
+}
+
+/* Loading and Error States */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.loadingSpinner {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.errorContainer h2 {
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.errorContainer p {
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.retryButton {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.retryButton:hover {
+  transform: translateY(-2px);
+}
+
+.noJobs {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #aaa;
+}
+
+/* Pagination */
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+}
+
+.paginationInfo {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .container {
     width: 90%;
@@ -185,6 +451,11 @@ background-clip: text;
     margin: 1.5rem 0;
   }
 
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
   .accordionButton {
     font-size: 1.2rem;
     align-items: flex-start;
@@ -195,8 +466,34 @@ background-clip: text;
     margin-left: 1rem;
   }
 
-  .applyButton {
-    margin-left: 0;
+  .jobDetails {
+    padding: 1.5rem;
+  }
+
+  .jobInfoGrid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .jobFooter {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .jobHeaderTop {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .jobIndicators {
+    justify-content: flex-start;
+  }
+
+  .jobMeta {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .exploreButton {
@@ -226,8 +523,21 @@ background-clip: text;
     font-size: 0.95rem;
   }
 
-  .applyButton {
+  .applyButton,
+  .applyButtonDisabled {
     font-size: 0.85rem;
     padding: 0.5rem 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .jobTitle {
+    font-size: 1.2rem;
+  }
+
+  .jobIndicators {
+    font-size: 0.7rem;
   }
 }

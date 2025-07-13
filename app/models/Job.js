@@ -1,4 +1,4 @@
-// app/models/Job.js
+// app/models/Job.js - COMPLETE FILE WITH NO DATE VALIDATION
 
 import mongoose from "mongoose";
 
@@ -101,14 +101,9 @@ const JobSchema = new mongoose.Schema(
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, "Please enter a valid contact email address"],
     },
+    // REMOVED VALIDATION - Just a simple Date field
     applicationDeadline: {
       type: Date,
-      validate: {
-        validator: function (v) {
-          return !v || v > new Date();
-        },
-        message: "Application deadline must be in the future",
-      },
     },
     postedBy: {
       type: String,
@@ -127,7 +122,7 @@ const JobSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: true, // This adds createdAt and updatedAt fields
+    timestamps: true,
   }
 );
 
@@ -148,7 +143,7 @@ JobSchema.virtual("isApplicationOpen").get(function () {
 
 // Pre-save middleware to format data
 JobSchema.pre("save", function (next) {
-  // Capitalize first letter of title and department
+  // Capitalize first letter of title
   if (this.title) {
     this.title = this.title.replace(/\b\w/g, (l) => l.toUpperCase());
   }
@@ -184,12 +179,6 @@ JobSchema.methods.getFormattedCreatedAt = function () {
     month: "long",
     day: "numeric",
   });
-};
-
-JobSchema.methods.isApplicationOpen = function () {
-  if (!this.isActive) return false;
-  if (!this.applicationDeadline) return true;
-  return this.applicationDeadline > new Date();
 };
 
 // Static methods

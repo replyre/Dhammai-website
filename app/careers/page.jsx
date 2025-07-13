@@ -29,6 +29,7 @@ const CareerSection = () => {
       setLoading(true);
       const response = await fetch("/api/jobs");
       const result = await response.json();
+      console.log(result);
 
       if (result.success) {
         setJobs(result.data);
@@ -71,6 +72,27 @@ const CareerSection = () => {
       month: "long",
       day: "numeric",
     });
+  };
+
+  // Function to render description with highlighted email instruction
+  const renderJobDescription = (description) => {
+    const emailInstructionPattern =
+      /(\n\nTo apply for this position, please send your resume and cover letter to: .+)$/;
+    const match = description.match(emailInstructionPattern);
+
+    if (match) {
+      const mainDescription = description.replace(emailInstructionPattern, "");
+      const emailInstruction = match[1].trim();
+
+      return (
+        <div>
+          <p style={{ whiteSpace: "pre-line" }}>{mainDescription}</p>
+          <div className={styles.emailHighlight}>{emailInstruction}</div>
+        </div>
+      );
+    }
+
+    return <p style={{ whiteSpace: "pre-line" }}>{description}</p>;
   };
 
   if (loading) {
@@ -199,7 +221,7 @@ const CareerSection = () => {
                   <div className={styles.jobDetails}>
                     <div className={styles.jobSection}>
                       <h4>About the Role</h4>
-                      <p>{job.description}</p>
+                      {renderJobDescription(job.description)}
                     </div>
 
                     {job.responsibilities &&
@@ -250,6 +272,9 @@ const CareerSection = () => {
                             {formatDate(job.applicationDeadline)}
                           </div>
                         )}
+                        <div className={styles.contact}>
+                          <strong>Send Your Cv:</strong> {job.contactEmail}
+                        </div>
                         <div className={styles.posted}>
                           <strong>Posted:</strong> {formatDate(job.createdAt)}
                         </div>
