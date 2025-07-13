@@ -1,15 +1,8 @@
-// app/careers/page.jsx
-
+// Fixed version - Working accordion functionality
 "use client";
 import React, { useState, useEffect } from "react";
 import styles from "./CareerSection.module.css";
-import {
-  FaPlus,
-  FaMinus,
-  FaMapMarkerAlt,
-  FaClock,
-  FaBriefcase,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaClock, FaBriefcase } from "react-icons/fa";
 import ApplicationModal from "./components/ApplicationModal";
 
 const CareerSection = () => {
@@ -32,6 +25,7 @@ const CareerSection = () => {
 
       if (result.success) {
         setJobs(result.data);
+        console.log("Jobs loaded:", result.data);
       } else {
         console.error("Failed to fetch jobs:", result.message);
       }
@@ -43,7 +37,12 @@ const CareerSection = () => {
   };
 
   const toggleAccordion = (index) => {
-    setActiveIndex(index === activeIndex ? null : index);
+    console.log("🔥 Toggle called - Current:", activeIndex, "Clicked:", index);
+    setActiveIndex((currentIndex) => {
+      const newIndex = currentIndex === index ? null : index;
+      console.log("🔄 State changing to:", newIndex);
+      return newIndex;
+    });
   };
 
   const handleApplyNow = (job) => {
@@ -56,60 +55,9 @@ const CareerSection = () => {
     setSelectedJob(null);
   };
 
-  const formatSalary = (salary) => {
-    if (salary && salary.min && salary.max) {
-      return `${
-        salary.currency
-      } ${salary.min.toLocaleString()} - ${salary.max.toLocaleString()}`;
-    }
-    return "Competitive salary";
-  };
-
-  const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
   if (loading) {
     return (
       <section className={styles.container}>
-        <div className={styles.leftTopShade}>
-          <img src="careerbg1.png" alt="" height={"100%"} width={"100%"} />
-        </div>
-        <div className={styles.rightTopShade}>
-          <img src="careerbg1.png" alt="" height={"100%"} width={"100%"} />
-        </div>
-        <div className={styles.rightmiddleShade}>
-          <img src="careerbg2.png" alt="" height={"100%"} width={"100%"} />
-        </div>
-        <div className={styles.leftendShade}>
-          <img src="careerbg2.png" alt="" height={"100%"} width={"100%"} />
-        </div>
-
-        <button className={styles.exploreButton}>
-          <img src="star.svg" height={"20px"} alt="" /> Explore Career
-          Opportunities
-        </button>
-
-        <div className={styles.textArea}>
-          <h1>
-            <span>Transforming</span> Ideas Into <br />
-            <span>Intelligent</span> Solutions
-          </h1>
-          <p>
-            Empowering businesses with tailored AI solutions, innovative
-            strategies, and cutting-edge technology to drive success and
-            efficiency.
-          </p>
-        </div>
-
-        <div className={styles.imagePlaceholder}>
-          <img src="./careers.jpg" alt="" height={"100%"} width={"100%"} />
-        </div>
-
         <div className={styles.loadingContainer}>
           <div className={styles.loadingSpinner}>Loading opportunities...</div>
         </div>
@@ -164,9 +112,34 @@ const CareerSection = () => {
         ) : (
           jobs.map((job, index) => (
             <div key={job._id} className={styles.accordionItem}>
-              <button
+              {/* Debug for each job */}
+              <div
+                style={{ color: "cyan", fontSize: "12px", marginBottom: "5px" }}
+              >
+                Job {index}: {job.title} - Is Open:{" "}
+                {activeIndex === index ? "YES" : "NO"}
+              </div>
+
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log("🎯 Clicked job:", job.title, "index:", index);
+                  toggleAccordion(index);
+                }}
                 className={styles.accordionButton}
-                onClick={() => toggleAccordion(index)}
+                style={{
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "1rem",
+                  background: "none",
+                  border: "none",
+                  color: "#fff",
+                  fontSize: "2rem",
+                  width: "100%",
+                  textAlign: "left",
+                }}
               >
                 {activeIndex === index ? (
                   <img
@@ -192,72 +165,179 @@ const CareerSection = () => {
                     </span>
                   </div>
                 </div>
-              </button>
+              </div>
 
+              {/* Accordion content - Force visibility */}
               {activeIndex === index && (
-                <div className={styles.accordionContent}>
-                  <div className={styles.jobDetails}>
-                    <div className={styles.jobSection}>
-                      <h4>About the Role</h4>
-                      <p>{job.description}</p>
+                <div
+                  style={{
+                    display: "block !important",
+                    visibility: "visible !important",
+                    opacity: "1 !important",
+                    backgroundColor: "rgba(255,255,255,0.1)",
+                    padding: "20px",
+                    marginTop: "10px",
+                    border: "1px solid #444",
+                    marginLeft: "50px",
+                    color: "#ccc",
+                    fontSize: "1rem",
+                    lineHeight: "1.6",
+                  }}
+                >
+                  <div style={{ color: "lime", marginBottom: "10px" }}>
+                    ✅ Content is showing! Active index: {activeIndex}, Current
+                    index: {index}
+                  </div>
+
+                  <div>
+                    <div style={{ marginBottom: "2rem" }}>
+                      <h4
+                        style={{
+                          fontSize: "1.2rem",
+                          fontWeight: "600",
+                          marginBottom: "1rem",
+                          color: "#fff",
+                        }}
+                      >
+                        About the Role
+                      </h4>
+                      <p style={{ lineHeight: "1.6", color: "#ccc" }}>
+                        {job.description || "No description available"}
+                      </p>
                     </div>
 
                     {job.responsibilities &&
                       job.responsibilities.length > 0 && (
-                        <div className={styles.jobSection}>
-                          <h4>What You'll Do</h4>
-                          <ul>
+                        <div style={{ marginBottom: "2rem" }}>
+                          <h4
+                            style={{
+                              fontSize: "1.2rem",
+                              fontWeight: "600",
+                              marginBottom: "1rem",
+                              color: "#fff",
+                            }}
+                          >
+                            Responsibilities
+                          </h4>
+                          <ul
+                            style={{ listStyleType: "none", paddingLeft: "0" }}
+                          >
                             {job.responsibilities.map((responsibility, i) => (
-                              <li key={i}>{responsibility}</li>
+                              <li
+                                key={i}
+                                style={{
+                                  marginBottom: "0.8rem",
+                                  color: "#ccc",
+                                  position: "relative",
+                                  paddingLeft: "1.5rem",
+                                }}
+                              >
+                                <span
+                                  style={{
+                                    content: "•",
+                                    color: "#4ade80",
+                                    fontWeight: "bold",
+                                    position: "absolute",
+                                    left: "0",
+                                  }}
+                                >
+                                  •
+                                </span>
+                                {responsibility}
+                              </li>
                             ))}
                           </ul>
                         </div>
                       )}
 
                     {job.requirements && job.requirements.length > 0 && (
-                      <div className={styles.jobSection}>
-                        <h4>What We're Looking For</h4>
-                        <ul>
+                      <div style={{ marginBottom: "2rem" }}>
+                        <h4
+                          style={{
+                            fontSize: "1.2rem",
+                            fontWeight: "600",
+                            marginBottom: "1rem",
+                            color: "#fff",
+                          }}
+                        >
+                          Requirements
+                        </h4>
+                        <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
                           {job.requirements.map((requirement, i) => (
-                            <li key={i}>{requirement}</li>
+                            <li
+                              key={i}
+                              style={{
+                                marginBottom: "0.8rem",
+                                color: "#ccc",
+                                position: "relative",
+                                paddingLeft: "1.5rem",
+                              }}
+                            >
+                              <span
+                                style={{
+                                  content: "•",
+                                  color: "#4ade80",
+                                  fontWeight: "bold",
+                                  position: "absolute",
+                                  left: "0",
+                                }}
+                              >
+                                •
+                              </span>
+                              {requirement}
+                            </li>
                           ))}
                         </ul>
                       </div>
                     )}
 
-                    {job.niceToHave && job.niceToHave.length > 0 && (
-                      <div className={styles.jobSection}>
-                        <h4>Nice to Have</h4>
-                        <ul>
-                          {job.niceToHave.map((item, i) => (
-                            <li key={i}>{item}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    <div className={styles.jobFooter}>
-                      <div className={styles.jobInfo}>
-                        <div className={styles.salary}>
-                          <strong>Salary:</strong> {formatSalary(job.salary)}
-                        </div>
-                        <div className={styles.experience}>
-                          <strong>Experience:</strong> {job.experience}
-                        </div>
-                        {job.applicationDeadline && (
-                          <div className={styles.deadline}>
-                            <strong>Application Deadline:</strong>{" "}
-                            {formatDate(job.applicationDeadline)}
-                          </div>
-                        )}
-                        <div className={styles.posted}>
-                          <strong>Posted:</strong> {formatDate(job.createdAt)}
-                        </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "flex-end",
+                        marginTop: "2rem",
+                        paddingTop: "2rem",
+                        borderTop: "1px solid #333",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "0.5rem",
+                          fontSize: "0.9rem",
+                          color: "#aaa",
+                        }}
+                      >
+                        <div>Experience: {job.experience}</div>
+                        <div>Department: {job.department}</div>
+                        <div>Location: {job.location}</div>
                       </div>
 
                       <button
-                        className={styles.applyButton}
                         onClick={() => handleApplyNow(job)}
+                        style={{
+                          background: "rgba(255, 255, 255, 0.1)",
+                          color: "#fff",
+                          padding: "0.6rem 1.2rem",
+                          fontSize: "0.95rem",
+                          fontWeight: "bold",
+                          border: "2px solid white",
+                          borderRadius: "30px",
+                          cursor: "pointer",
+                          transition:
+                            "transform 0.2s ease, box-shadow 0.2s ease",
+                        }}
+                        onMouseOver={(e) => {
+                          e.target.style.transform = "translateY(-2px)";
+                          e.target.style.boxShadow =
+                            "0 4px 15px rgba(255, 255, 255, 0.3)";
+                        }}
+                        onMouseOut={(e) => {
+                          e.target.style.transform = "translateY(0)";
+                          e.target.style.boxShadow = "none";
+                        }}
                       >
                         Apply Now
                       </button>
@@ -277,7 +357,7 @@ const CareerSection = () => {
           onClose={closeApplicationModal}
           onSuccess={() => {
             closeApplicationModal();
-            // Optionally show success message
+            fetchJobs();
           }}
         />
       )}
