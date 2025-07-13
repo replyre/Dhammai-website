@@ -95,6 +95,8 @@ const ApplicationModal = ({ job, onClose, onSuccess }) => {
         skills: skillsArray,
       };
 
+      console.log("Submitting application:", applicationData);
+
       const response = await fetch("/api/jobs/applications", {
         method: "POST",
         headers: {
@@ -104,11 +106,32 @@ const ApplicationModal = ({ job, onClose, onSuccess }) => {
       });
 
       const result = await response.json();
+      console.log("Application response:", result);
 
       if (response.ok && result.success) {
         setSubmitMessage(
           "Application submitted successfully! We'll be in touch soon."
         );
+
+        // Reset form
+        setFormData({
+          fullName: "",
+          email: "",
+          phoneNumber: "",
+          currentLocation: "",
+          experience: "",
+          currentRole: "",
+          currentCompany: "",
+          expectedSalary: "",
+          noticePeriod: "",
+          coverLetter: "",
+          resumeUrl: "",
+          portfolioUrl: "",
+          linkedinUrl: "",
+          githubUrl: "",
+          skills: "",
+        });
+
         setTimeout(() => {
           onSuccess();
         }, 2000);
@@ -120,8 +143,8 @@ const ApplicationModal = ({ job, onClose, onSuccess }) => {
         throw new Error(result.message || "Failed to submit application");
       }
     } catch (error) {
+      console.error("Application submission error:", error);
       setSubmitMessage(`Error: ${error.message}`);
-      console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
     }

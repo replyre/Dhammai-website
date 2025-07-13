@@ -138,7 +138,8 @@ export async function POST(request) {
       );
     }
 
-    if (!job.isActive || !job.isApplicationOpen()) {
+    // FIXED: Access isApplicationOpen as a property, not a function
+    if (!job.isActive || !job.isApplicationOpen) {
       return NextResponse.json(
         {
           success: false,
