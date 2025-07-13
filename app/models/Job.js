@@ -1,4 +1,4 @@
-// app/models/Job.js - COMPLETE FILE WITH NO DATE VALIDATION
+// app/models/Job.js
 
 import mongoose from "mongoose";
 
@@ -101,7 +101,6 @@ const JobSchema = new mongoose.Schema(
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, "Please enter a valid contact email address"],
     },
-    // REMOVED VALIDATION - Just a simple Date field
     applicationDeadline: {
       type: Date,
     },
