@@ -123,8 +123,9 @@ background-clip: text;
 
 .featuredText p {
   color: #bbb;
-  width: 60%;
+  width: 90%;
   font-size: 1rem;
+  text-align: justify;
 
 }
 

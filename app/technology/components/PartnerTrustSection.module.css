@@ -195,7 +195,8 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 60px 16px;
+    padding: 16px 16px;
+    min-height: fit-content;
   }
   
   .subtitle {
@@ -247,8 +248,14 @@
     width: 36px;
     height: 36px;
     font-size: 18px;
+    
   }
   
+  .badgeIcon img{
+     width: 52px;
+    height: 52px;
+  }
+
   .badgeTitle,
   .badgeSubtitle {
     font-size: 0.9rem;
@@ -257,6 +264,9 @@
   .demoButton {
     padding: 14px 36px;
     font-size: 0.95rem;
+  }
+  .description{
+   font-size: 16px !important;
   }
 }
 

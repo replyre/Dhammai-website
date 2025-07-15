@@ -41,12 +41,14 @@
   top: 30%;
   right: 10%;
   width: 500px;
+  color: white;
 }
 .text2{
     position: absolute;
     top:28% !important;
     right:10%;
     width: 500px;
+    color: white;
     
 }
 
