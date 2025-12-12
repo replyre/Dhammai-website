@@ -133,7 +133,7 @@ export default async function BlogPost({ params }) {
         </div>
       </article>
 
-      <FooterSection />
+      
     </main>
   );
 }

@@ -21,7 +21,7 @@ const FooterSection = () => {
           <nav className={styles.navigation}>
             {/* Logo */}
            
-              <img src="logo.png" height={"30px"} />
+              <img src="/logo.png" height={"30px"} />
 
             
             {/* Navigation Links */}
