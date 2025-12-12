@@ -1,0 +1,133 @@
+
+.container{
+    margin-top: 200px;
+    
+}
+
+.container p{
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;   
+    color:#848484;
+}
+
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 400px;
+    width: 100%;
+    z-index: -1;
+    background: url("/red.png");
+    background-size: cover;
+}
+
+
+.container h1{
+    font-size: 4rem;
+    font-weight: 400;
+    margin: 0.5rem 0rem;
+    vertical-align: middle;
+        color: transparent;
+  background: linear-gradient(83deg, #464646 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.imgContainer{
+   
+    width: 60%;
+    max-width: 900px;
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    padding-bottom: 50px;
+   
+}
+.imgContainer img{
+    padding: 20px;
+   
+}
+.imgContainer p{
+    width: 120%;
+    margin: 0;
+        text-align: left;
+    font-size: 24px;
+   text-transform: unset;
+   
+      
+}
+.imgContainer::before{
+    content: " ";
+    width: 400px;
+    height: 400px;
+   box-shadow: 10px 0px 50px 1px white;
+    position: absolute;
+    top:30px;
+    right: -90px;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.imgContainer span{
+    color: white;
+}
+
+@media (max-width: 768px){
+    .container p{
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;   
+    color:#848484;
+}
+.container h1{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 0.5rem 0rem;
+    vertical-align: middle;
+        color: transparent;
+  background: linear-gradient(83deg, #464646 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container{
+    margin-top: 100px;
+    
+}
+.overlay{
+   display: none;
+}
+
+.imgContainer img{
+    padding: 20px;
+    height: 250px;
+    width:360px;
+   
+}
+
+.imgContainer::before{
+   display: none;
+}
+
+.imgContainer p{
+    width: 130%;
+    margin: 0;
+        text-align: left;
+    font-size: 12px;
+   text-transform: unset;
+   
+      
+}
+}

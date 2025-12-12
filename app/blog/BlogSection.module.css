@@ -1,0 +1,283 @@
+.container {
+ 
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.leftTopShade{
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+.rightTopShade{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  transform: rotateY(180deg);
+}
+.header {
+  display: flex;
+  margin-bottom: 60px;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.blogButton {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.header h1 span {
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 10px;
+  color: #999;
+}
+
+.searchBox {
+  margin: 20px auto 0;
+  width: 30%;
+  background: transparent;
+  padding: 12px 20px;
+  border-radius: 25px;
+  display: flex;
+  align-items: right;
+  border: 1px solid #aaa;
+  margin-right: 40px;
+
+}
+
+.searchBox input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 10px;
+}
+
+.icon {
+  color: #ccc;
+}
+
+.latestBlogs h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 40px 0 20px;
+  margin-bottom:40px ;
+  text-align: end;
+  
+}
+.latestBlogs h2 span{
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.featured {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.featuredText {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  height: 300px;
+}
+
+.featuredText h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.featuredText p {
+  color: #bbb;
+  width: 90%;
+  font-size: 1rem;
+  text-align: justify;
+
+}
+
+.divider{
+  height:2px;
+  background: linear-gradient(to right, black, grey, black ) ;
+  margin-bottom: 30px ;
+}
+
+.meta {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 40px;
+}
+
+.readBtn {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.featuredImg {
+  width: 50%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 10px;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .featuredText {
+    width: 100%;
+  }
+
+  .featuredImg {
+    width: 100%;
+    height: 250px;
+  }
+
+  .searchBox {
+    width: 40%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .searchBox {
+    width: 100%;
+    margin: 0;
+  }
+
+  .latestBlogs h2 {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  .featured {
+    flex-direction: column;
+  }
+
+  .featuredText {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .featuredText p {
+    width: 100%;
+  }
+
+  .meta {
+    margin-right: 0;
+  }
+
+  .featuredImg {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .featuredText h3 {
+    font-size: 1rem;
+  }
+
+  .featuredText p {
+    font-size: 0.9rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .searchBox {
+    padding: 10px 16px;
+  }
+
+  .readBtn {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+  }
+}

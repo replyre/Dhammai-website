@@ -10,13 +10,16 @@
 
 .headingWrapper {
   margin-bottom: 2rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 80%;
   margin: auto;
+  margin-bottom: 3rem;
+}
+
+.titleSection {
+  flex: 1;
 }
 
 .title {
@@ -38,6 +41,7 @@
 .navIcons {
   display: flex;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .navIcons button {
@@ -46,6 +50,14 @@
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.navIcons button:hover {
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .faqList {
@@ -53,8 +65,14 @@
   gap: 1.5rem;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 5rem 0;
+  padding: 2rem 0;
   margin-left: 100px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.faqList::-webkit-scrollbar {
+  display: none;
 }
 
 .faqCard {
@@ -63,16 +81,171 @@
   border-radius: 1rem;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.faqCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .faqCard h3 {
   font-size: clamp(1.1rem, 1.5vw, 2rem);
   font-weight: 600;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .faqCard p {
   font-size: 0.95rem;
   color: #aaa;
   line-height: 1.5;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .faqWrapper {
+    padding: 3rem 1.5rem;
+    margin-top: 60px;
+  }
+
+  .headingWrapper {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .faqList {
+    margin-left: 50px;
+  }
+
+  .faqCard {
+    flex: 0 0 40vw;
+    padding: 1.25rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .faqWrapper {
+    padding: 2rem 1rem;
+    margin-top: 40px;
+  }
+
+  .headingWrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .titleSection {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .navIcons {
+    align-self: flex-end;
+    gap: 0.75rem;
+  }
+
+  .navIcons button {
+    font-size: 1.5rem;
+    padding: 0.75rem;
+  }
+
+  .faqList {
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  .faqCard {
+    flex: 0 0 80vw;
+    padding: 1.25rem;
+    min-height: 140px;
+  }
+
+  .faqCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faqCard p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .faqWrapper {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .headingWrapper {
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .navIcons button {
+    font-size: 1.25rem;
+    padding: 0.6rem;
+  }
+
+  .faqList {
+    gap: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .faqCard {
+    flex: 0 0 85vw;
+    padding: 1rem;
+    min-height: 120px;
+  }
+
+  .faqCard h3 {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .faqCard p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .faqCard:hover {
+    transform: none;
+  }
+  
+  .navIcons button:hover {
+    background-color: transparent;
+  }
+  
+  .navIcons button:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+  }
 }

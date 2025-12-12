@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Info.module.css';
+import Link from 'next/link';
 
 export const Info = () => {
   return (
@@ -20,7 +21,7 @@ export const Info = () => {
           So You Can <span className={styles.highlight}>Focus On What Truly Matters: Knowledge</span>
         </p>
         
-        <a href="#" className={styles.ctaButton}>Know More</a>
+        <Link href="/contact" className={styles.ctaButton}>Know More</Link>
       </div>
     </div>
   );

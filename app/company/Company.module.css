@@ -1,0 +1,579 @@
+.dome{
+    height: fit-content;
+    width: 100%;
+    margin-top: 200px;
+    background: url("/halo.png");
+    background-size: cover;
+     position: relative;
+}
+.container{
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 500px;
+    width: 100%;
+    z-index: -2;
+    background: url("/red.png");
+    background-size: cover;
+}
+.dome p{
+   padding-top: 150px;
+   text-align: center;
+   font-size: 25px;
+   text-transform: uppercase;
+   color:grey;
+   
+   
+}
+.dome h1{
+   text-align: center;
+   font-weight: 400;
+   font-size: 50px;
+    color: transparent;
+  background: linear-gradient(83deg, #313131 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+ .light{
+    position: absolute;
+   padding-top: 30px;
+   margin: auto;
+   width: 100%;
+   z-index: 1;
+   
+ }
+
+ .lightbeam{
+    display: none;
+  
+ }
+
+.brain{
+   position: absolute;
+    top:400px;
+    z-index: 0;
+ width: 100%;
+ display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.brain img{
+    margin: auto;
+}
+
+.world{
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 200px;
+}
+.world img{
+    height: 100%;
+    width: 100%
+    
+
+}
+.worldtext{
+    position: absolute;
+   bottom: 0px;
+   background: black;
+   
+   
+}
+
+.worldtext2{
+   
+   background: black;
+ 
+   width: 80%;
+   margin: auto;
+  
+   
+}
+.worldtext2 h1{
+    font-size: 50px;
+    padding-top: 20px;
+    font-weight: 400;
+        color: transparent;
+       
+  background: linear-gradient(to top, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align: right;
+padding-bottom: 20px;
+}
+
+.worldtext h1{
+    font-size: 50px;
+    padding-top: 20px;
+    font-weight: 400;
+        color: transparent;
+        width: fit-content;
+  background: linear-gradient(90deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+.worldtext p{
+    font-size: 25px;
+    color: grey;
+    padding: 10px 0px;
+}
+.brainbelow{
+   position: absolute;
+   top:69%;
+    left: 30%;
+
+    z-index: 1;
+ 
+   
+}
+.imgs{
+    position: relative;
+    height: 120vh;
+    width: 100vw;
+    
+}
+
+.text{
+    position: relative;
+    top:-200px;
+    z-index: 10;
+    text-align: center;
+    margin: auto;
+}
+
+.text h1{
+    color: transparent;
+  background: linear-gradient(43deg, #313131 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    font-size: 36px;
+    font-weight: 400;
+  
+}
+
+.text p{
+    width: 70%;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 1.4rem;
+    color: grey;
+} 
+
+.text span{
+    color:white;
+    font-weight: 500;
+}
+
+.vision{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    
+    
+}
+ .comp{
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 300px;
+   padding: 50px;
+   position: relative;
+  
+}
+
+.comp div{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    align-items: self-start;
+    
+
+}
+
+.vision  div img{
+    height: 25px;
+}
+.vision  .overlay1,.vision  .overlay2,.vision  .overlay3 {
+    position: absolute; 
+   height: 100%;
+   width: 100%;
+    z-index: 1;
+   
+top:0px; 
+left: 0px; }
+
+
+.evolve h1{
+ color: transparent;
+  background: linear-gradient(43deg, #484848 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    font-size: 44px;
+    font-weight: 400;
+    width: fit-content;
+    margin: auto;
+}
+
+.evolve p{
+    font-size: 25px;
+    color: grey;
+   width: 100%;
+   text-align: center;
+   
+    line-height: 1.8;
+}
+
+.timeline2{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 50px;
+    padding: 44px;
+
+}
+
+.journeySection {
+ 
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.journeyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  
+}
+
+.journeyContent {
+  flex: 1;
+}
+
+.journeyTitle {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+.journeySubtitle {
+  font-size: 4rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+
+  color: #77628D;}
+
+
+.ctaButton {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+.timeline2 .compimg{
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline2 div img{
+  transform: rotate(90deg);
+  filter: grayscale(100%);
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .journeyContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .journeyTitle,
+  .journeySubtitle {
+    font-size: 2.5rem;
+  }
+  
+  .ctaButton {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px){
+  .dome{
+    height: fit-content;
+    width: 100%;
+    margin-top: 200px;
+    background:unset;
+    background-size: cover;
+     position: relative;
+}
+
+.overlay{
+    position: absolute;
+    top:0px;
+    height: 500px;
+    width: 100%;
+    z-index: -2;
+    background: unset;
+    background-size: cover;
+}
+
+.dome p{
+   padding-top: 0px;
+   text-align: center;
+   font-size: 20px;
+   text-transform: uppercase;
+   color:grey;
+  
+   
+}
+.dome h1{
+   text-align: center;
+   font-weight: 400;
+   font-size: 36px;
+    color: transparent;
+  background: linear-gradient(83deg, #313131 27.1%, #FFF 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.lightbeam{
+    position: absolute;
+   padding-top: 30px;
+    display: block;
+   margin: auto;
+   width: 100%;
+   z-index: 1;
+  
+ 
+ }
+ .light{
+  display: none;
+ }
+ .brain{
+   display: none;
+   
+}
+.text{
+    position: relative;
+   
+    top:-200px;
+    z-index: 10;
+    text-align: center;
+    margin: auto;
+    
+    
+}
+
+.text p{
+    width: 90%;
+    margin: auto;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    color: grey;
+    
+
+} 
+
+.world{
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 100px;
+    
+    padding-top: 200px;
+}
+.world img{
+  position: absolute;
+    height: 200px;
+    width: 100%;
+    top:-150px;
+    border:1px solid grey;
+  z-index: 20;
+  border-radius: 20px;
+}
+.worldtext{
+    position: absolute;
+   bottom: 0px;
+   background: black;
+   top: 50px;
+  height: fit-content;
+  
+}
+.worldtext h1{
+    font-size: 32px;
+    padding-top: 20px;
+    font-weight: 400;
+        color: transparent;
+        width: fit-content;
+  background: linear-gradient(90deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.worldtext p{
+    font-size: 16px;
+    color: grey;
+    padding: 10px 0px;
+}
+
+
+.worldtext2{
+   
+   background: black;
+  
+   width: 80%;
+   margin: auto;
+  
+   
+}
+
+.worldtext2 h1{
+    font-size: 30px;
+    padding-top: 100px;
+    font-weight: 400;
+        color: transparent;
+  background: linear-gradient(to top, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+text-align: left;
+width: fit-content;
+}
+
+.vision{
+   
+   grid-template-columns: repeat(1, 1fr);
+    position: relative;
+    
+    
+}
+.evolve{
+  display: none;
+}
+
+.timeline2{
+    display: grid;
+    grid-template-columns:repeat(1, 1fr);
+    padding: 12px;
+   gap:0px;
+
+
+}
+
+.compimg{
+
+  width: 90vw;
+  
+}
+
+.timeline2 div img{
+  transform: rotate(90deg) scale(0.7);
+  filter: grayscale(100%);
+
+}
+
+.journeyTitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  line-height: 1.1;
+  background-clip: text;
+  color: transparent;
+  background: linear-gradient(83deg, #FFF 27.1%, #525252 72.9%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+
+.journeySubtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+
+  color: #77628D;}
+
+
+}
+
+@media (min-height: 768px) and (max-width: 768px){
+  .text{
+    position: relative;
+    top:-400px;
+  
+    z-index: 10;
+    text-align: center;
+    margin: auto;
+   
+}
+.world img{
+  position: absolute;
+    height: 300px;
+    width: 100%;
+    top:-300px;
+    border:1px solid grey;
+  z-index: 20;
+  border-radius: 20px;
+}
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from'./Hero.module.css'; // Assuming you have a CSS file for styling
 import './RadialGradientText.css';
-import { Info } from '../Info/Info';
 const Hero = () => {
   return (
     <div className={styles.hero}>

@@ -1,0 +1,245 @@
+/* KPICounterSection.module.css */
+
+.container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: url('/kpi.png') no-repeat  0% 80%;
+  background-size: contain;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  padding: 20px;
+}
+
+.kpiTable {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid #666666;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.kpiTable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ ;
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  border-bottom: 1px solid;
+  border-image: linear-gradient(90deg, #666666, #000000) 1;
+  position: relative;
+  z-index: 1;
+}
+.headerCell {
+  padding: 24px 32px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  /* border-right: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.headerCell:last-child {
+  border-right: none;
+}
+
+.tableBody {
+  position: relative;
+  z-index: 1;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  /* border-bottom: 1px solid rgba(255, 255, 25, 0.06); */
+  transition: background-color 0.2s ease;
+}
+
+.tableRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.metricCell,
+.targetCell,
+.whyItMattersCell {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+
+}
+
+.metricCell:last-child,
+.targetCell:last-child,
+.whyItMattersCell:last-child {
+  border-right: none;
+}
+
+.metricCell {
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.targetCell {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  justify-content: center;
+  text-align: center;
+}
+
+.liveCounter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrowIcon {
+  font-size: 1.5rem;
+  color: #22c55e;
+}
+
+.whyItMattersCell {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr 1fr 1.8fr;
+  }
+  
+  .metricCell,
+  .targetCell,
+  .whyItMattersCell {
+    padding: 24px 20px;
+  }
+  
+  .headerCell {
+    padding: 20px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 16px;
+  }
+  
+  .title {
+    margin-bottom: 40px;
+  }
+  
+  .kpiTable {
+    border-radius: 16px;
+  }
+  
+  .kpiTable::before {
+    border-radius: 16px;
+  }
+  
+  .tableHeader,
+  .tableRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .headerCell {
+    display: none;
+  }
+  
+  .tableRow {
+    flex-direction: column;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+  }
+  
+  .metricCell,
+  .targetCell,
+  .whyItMattersCell {
+    padding: 8px 0;
+    border-right: none;
+    text-align: left;
+    justify-content: flex-start;
+  }
+  
+  .metricCell {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .targetCell {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+  
+  .whyItMattersCell {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .metricCell,
+  .targetCell,
+  .whyItMattersCell {
+    padding: 6px 0;
+  }
+  
+  .targetCell {
+    font-size: 1.2rem;
+  }
+  
+  .whyItMattersCell {
+    font-size: 0.85rem;
+  }
+  
+  .tableRow {
+    padding: 16px;
+  }
+}

@@ -49,6 +49,7 @@
 .lightcontainer img {
   height: 600px;
   width: 100%;
+
 }
 @media (min-width: 1700px) {
   .light {
@@ -75,4 +76,38 @@
     transform: rotatez(35.288deg);
     z-index: 0;
   }
+}
+
+@media (max-width: 760px) {
+  .wheel {
+  position: absolute;
+  right: -30%;
+  transform: rotatex(120deg);
+  z-index: 0;
+  transform: scale(0.8);
+  
+  top:0px;
+}
+.light {
+    transform: unset;
+    top: 0px;
+    right: 0px;
+    display: none;
+  }
+   .overlay {
+    position: absolute;
+    height: 620px;
+    width: 600px;
+    background: radial-gradient(
+      circle at 55% -30%,
+      transparent 45%,
+      black 58%,
+      black 100%
+    );
+    transform: rotate(-30deg);
+    z-index: 10;
+    /* background-color: red; */
+  }
+
+   
 }

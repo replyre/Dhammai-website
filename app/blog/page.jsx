@@ -82,7 +82,7 @@ const BlogPage = () => {
         </div>
       </div>
 
-      <FooterSection />
+     
     </main>
   );
 };
